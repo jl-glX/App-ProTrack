@@ -1,0 +1,18 @@
+{
+  "appId": "com.budgettracker.app",
+  "appName": "Budget Tracker",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 2000,
+      "backgroundColor": "#3b82f6",
+      "showSpinner": true,
+      "spinnerColor": "#ffffff"
+    }
+  },
+  "server": {
+    "androidScheme": "https",
+    "iosScheme": "https"
+  }
+}
