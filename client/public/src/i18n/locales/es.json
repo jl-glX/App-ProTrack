@@ -1,0 +1,250 @@
+{
+  "common": {
+    "appName": "Gestor de Presupuestos",
+    "loading": "Cargando...",
+    "error": "Error",
+    "back": "Atrás",
+    "delete": "Eliminar",
+    "create": "Crear",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "edit": "Editar",
+    "close": "Cerrar",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "viewDetails": "Ver Detalles",
+    "categories": "categorías",
+    "notFound": "No encontrado",
+    "unknown": "Desconocido",
+    "confirmDelete": "¿Estás seguro de que deseas eliminar esto?"
+  },
+  "dashboard": {
+    "title": "Gestor de Presupuestos",
+    "subtitle": "Administra tus presupuestos y rastrea gastos por categoría",
+    "noBudgets": "Aún no hay presupuestos",
+    "noBudgetsDesc": "Crea tu primer presupuesto para comenzar",
+    "createBudget": "Crear Presupuesto",
+    "createProfessional": "Presupuesto Profesional",
+    "download": "Descargar Aplicación",
+    "templates": "Plantillas"
+  },
+  "budget": {
+    "basicInfo": "Información Básica",
+    "chooseTemplate": "Elegir una Plantilla",
+    "taxConfig": "Configuración de Impuestos",
+    "budgetType": "Tipo de Presupuesto",
+    "personal": "Presupuesto Personal",
+    "professional": "Presupuesto Profesional"
+  },
+  "charts": {
+    "categoryBreakdown": "Desglose por Categoría",
+    "spendingTrend": "Tendencia de Gasto",
+    "percentage": "Porcentaje",
+    "amount": "Cantidad",
+    "date": "Fecha",
+    "category": "Categoría"
+  },
+  "forms": {
+    "budgetName": "Nombre del Presupuesto",
+    "budgetDescription": "Descripción (opcional)",
+    "totalAmount": "Cantidad Total",
+    "currency": "Moneda",
+    "categoryName": "Nombre de la Categoría",
+    "categoryLimit": "Límite",
+    "color": "Color",
+    "icon": "Icono",
+    "transactionAmount": "Cantidad",
+    "transactionDescription": "Descripción",
+    "transactionDate": "Fecha",
+    "selectCategory": "Selecciona una categoría",
+    "required": "Obligatorio",
+    "optional": "Opcional",
+    "creating": "Creando...",
+    "adding": "Añadiendo..."
+  },
+  "template": {
+    "title": "Seleccionar Plantilla",
+    "description": "Elige una plantilla de presupuesto para organizar tus categorías según tu estilo de vida",
+    "student": "Plantilla para Estudiantes",
+    "family": "Plantilla para Familias",
+    "freelancer": "Plantilla para Freelancers",
+    "minimalist": "Plantilla Minimalista"
+  },
+  "tax": {
+    "title": "Configuración de Impuestos",
+    "description": "Selecciona tu país e impuesto aplicable para incluirlo en los cálculos del presupuesto",
+    "country": "País",
+    "taxType": "Tipo de Impuesto",
+    "percentage": "Porcentaje",
+    "noTaxes": "No hay impuestos disponibles para este país",
+    "selectTax": "Selecciona un impuesto",
+    "vatIncluded": "IVA Incluido"
+  },
+  "dialog": {
+    "newBudget": "Nuevo Presupuesto",
+    "createBudget": "Crear Presupuesto",
+    "createCategory": "Crear Categoría",
+    "addTransaction": "Añadir Transacción",
+    "month": "Mes"
+  },
+  "cookies": {
+    "title": "Preferencias de Cookies",
+    "description": "Usamos cookies para mejorar tu experiencia. Puedes personalizar tus preferencias o aceptar todas las cookies.",
+    "acceptAll": "Aceptar Todas",
+    "customize": "Personalizar",
+    "onlyNecessary": "Solo Cookies Necesarias",
+    "settings": "Configuración de Cookies",
+    "necessary": "Cookies Necesarias",
+    "necessaryDesc": "Requeridas para que el sitio funcione correctamente. No se pueden desactivar.",
+    "functional": "Cookies Funcionales",
+    "functionalDesc": "Recuerdan tus preferencias y configuraciones.",
+    "analytics": "Cookies de Análisis",
+    "analyticsDesc": "Nos ayudan a entender cómo usas el sitio web.",
+    "save": "Guardar Preferencias",
+    "manager": {
+      "title": "Gestor de Cookies",
+      "description": "Administra tus preferencias de cookies y revisa qué datos se almacenan.",
+      "confirmClear": "¿Estás seguro de que deseas eliminar todas las cookies?",
+      "clearAll": "Borrar Todas"
+    }
+  },
+  "feedback": {
+    "title": "Retroalimentación",
+    "rating": "Califica tu experiencia",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "message": "Mensaje",
+    "submit": "Enviar Retroalimentación",
+    "sending": "Enviando...",
+    "success": "¡Gracias por tu retroalimentación!",
+    "error": "Error al enviar retroalimentación",
+    "captchaError": "Por favor completa la verificación CAPTCHA"
+  },
+  "downloads": {
+    "title": "Descargar Aplicación",
+    "description": "Descarga nuestra aplicación para tu plataforma",
+    "windows": "Windows",
+    "mac": "macOS",
+    "linux": "Linux",
+    "android": "Android",
+    "ios": "iOS",
+    "start": "Iniciar Descarga",
+    "pause": "Pausar",
+    "resume": "Reanudar",
+    "retry": "Reintentar",
+    "error": "Error al descargar el archivo",
+    "success": "¡Descarga completada exitosamente!",
+    "complete": "Completado",
+    "stats": "Estadísticas de Descarga"
+  },
+  "templates": {
+    "page": {
+      "title": "Plantillas de Presupuesto",
+      "noTemplates": "Aún No Hay Plantillas",
+      "noTemplatesDesc": "Crea tu primera plantilla personalizada usando el asistente o el editor avanzado"
+    },
+    "preset": "Predefinida",
+    "more": "más",
+    "duplicate": "Duplicar",
+    "automate": "Automatizar",
+    "editor": {
+      "createTitle": "Crear Plantilla Personalizada",
+      "editTitle": "Editar Plantilla",
+      "name": "Nombre de la Plantilla",
+      "namePlaceholder": "Mi Plantilla Personalizada",
+      "description": "Descripción",
+      "descriptionPlaceholder": "Describe tu plantilla de presupuesto...",
+      "categories": "Categorías",
+      "categoryName": "Nombre",
+      "categoryNamePlaceholder": "Nombre de la categoría",
+      "percentage": "Porcentaje del Presupuesto",
+      "icon": "Icono",
+      "color": "Color",
+      "addCategory": "Añadir Categoría",
+      "updateCategory": "Actualizar Categoría",
+      "total": "Total",
+      "mustBe100": "debe ser 100%",
+      "percentageError": "El total de porcentajes debe ser exactamente 100%",
+      "save": "Guardar Plantilla"
+    },
+    "wizard": {
+      "title": "Asistente de Plantillas",
+      "basicInfo": "Información Básica",
+      "selectCategories": "Seleccionar Categorías",
+      "selectCategoriesDesc": "Elige las categorías que quieres incluir en tu plantilla",
+      "selectedCount": "Seleccionadas",
+      "customize": "Personalizar Categorías",
+      "autoDistribute": "Distribuir Automáticamente",
+      "review": "Revisar y Confirmar",
+      "createTemplate": "Crear Plantilla",
+      "readyToCreate": "¡Tu plantilla está lista para crear!",
+      "fixPercentages": "Por favor ajusta los porcentajes para que sumen 100%"
+    },
+    "advanced": {
+      "title": "Editor Avanzado"
+    },
+    "automation": {
+      "title": "Automatización de Plantilla",
+      "description": "Configura reglas automáticas para optimizar la gestión de tu presupuesto",
+      "smartCategorizeDesc": "Categoriza transacciones automáticamente basándose en descripción e historial",
+      "budgetAlertDesc": "Recibe notificaciones cuando el gasto se acerque a los límites de categoría",
+      "recurringDesc": "Detecta y rastrea transacciones recurrentes automáticamente",
+      "threshold": "Umbral de Alerta",
+      "confidence": "Nivel de Confianza"
+    }
+  },
+  "footer": {
+    "pioneerMessage": "Este es un proyecto pionero en gestión de presupuestos. Cualquier apoyo o contribución para ayudar a su desarrollo sería muy apreciado. ¡Gracias por ser parte de este viaje!",
+    "supportProject": "Apoyar Este Proyecto",
+    "supportMessage": "Ayuda a mantener este proyecto vivo y creciendo"
+  },
+  "professional": {
+    "title": "Crear Presupuesto Profesional",
+    "description": "Crea un presupuesto detallado con líneas de artículos, subtotales y cálculos de impuestos",
+    "namePlaceholder": "ej., Presupuesto Proyecto Q1 2024",
+    "budgetItems": "Artículos del Presupuesto",
+    "description": "Descripción",
+    "quantity": "Cantidad",
+    "unitPrice": "Precio Unitario",
+    "total": "Total",
+    "itemPlaceholder": "ej., Servicios de consultoría",
+    "addItem": "Añadir Artículo",
+    "summary": "Resumen",
+    "subtotal": "Subtotal"
+  },
+  "legal": {
+    "lastUpdated": "Última actualización",
+    "questions": "¿Preguntas?",
+    "privacy": {
+      "title": "Política de Privacidad",
+      "collection": "Recopilación de Información",
+      "collectionDesc": "Recopilamos información mínima necesaria para proporcionar nuestro servicio. Esto incluye datos de presupuesto, categorías y transacciones que creas.",
+      "usage": "Cómo Usamos Tu Información",
+      "usageDesc": "Tus datos se utilizan únicamente para proporcionar funcionalidad de seguimiento de presupuesto. No vendemos ni compartimos tu información personal.",
+      "security": "Seguridad de Datos",
+      "securityDesc": "Implementamos medidas de seguridad estándar de la industria para proteger tus datos.",
+      "rights": "Tus Derechos",
+      "rightsDesc": "Tienes derecho a acceder, modificar o eliminar tus datos en cualquier momento."
+    },
+    "terms": {
+      "title": "Términos de Servicio",
+      "acceptance": "Aceptación de Términos",
+      "acceptanceDesc": "Al usar esta aplicación, aceptas estos términos. Si no estás de acuerdo, no uses el servicio.",
+      "license": "Licencia de Uso",
+      "licenseDesc": "Te otorgamos una licencia no exclusiva e intransferible para usar esta aplicación.",
+      "restrictions": "Restricciones",
+      "restrictionsDesc": "No puedes realizar ingeniería inversa, redistribuir o usar esta aplicación con fines ilegales.",
+      "liability": "Limitación de Responsabilidad",
+      "liabilityDesc": "Esta aplicación se proporciona tal cual. No somos responsables de daños derivados de su uso."
+    },
+    "cookies": {
+      "title": "Política de Cookies",
+      "what": "Qué Son las Cookies",
+      "whatDesc": "Las cookies son pequeños archivos de texto almacenados en tu dispositivo que nos ayudan a mejorar tu experiencia.",
+      "types": "Tipos de Cookies que Usamos",
+      "typesDesc": "Usamos cookies necesarias para funcionalidad, cookies funcionales para preferencias y cookies de análisis.",
+      "manage": "Gestionar Cookies",
+      "manageDesc": "Puedes gestionar las preferencias de cookies a través de nuestro banner de consentimiento o configuración del navegador."
+    }
+  }
+}

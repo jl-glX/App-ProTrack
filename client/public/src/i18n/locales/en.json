@@ -1,0 +1,280 @@
+{
+  "common": {
+    "appName": "Budget Manager",
+    "loading": "Loading...",
+    "error": "Error",
+    "back": "Back",
+    "delete": "Delete",
+    "create": "Create",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "close": "Close",
+    "previous": "Previous",
+    "next": "Next",
+    "viewDetails": "View Details",
+    "categories": "categories",
+    "notFound": "Not Found",
+    "unknown": "Unknown",
+    "confirmDelete": "Are you sure you want to delete this?"
+  },
+  "dashboard": {
+    "title": "Budget Manager",
+    "subtitle": "Manage your budgets and track spending by category",
+    "noBudgets": "No budgets yet",
+    "noBudgetsDesc": "Create your first budget to get started",
+    "createBudget": "Create Budget",
+    "createProfessional": "Professional Budget",
+    "download": "Download App",
+    "templates": "Templates"
+  },
+  "budget": {
+    "basicInfo": "Basic Information",
+    "chooseTemplate": "Choose a Template",
+    "taxConfig": "Tax Configuration",
+    "budgetType": "Budget Type",
+    "personal": "Personal Budget",
+    "professional": "Professional Budget"
+  },
+  "charts": {
+    "categoryBreakdown": "Category Breakdown",
+    "spendingTrend": "Spending Trend",
+    "percentage": "Percentage",
+    "amount": "Amount",
+    "date": "Date",
+    "category": "Category"
+  },
+  "forms": {
+    "budgetName": "Budget Name",
+    "budgetDescription": "Description (optional)",
+    "totalAmount": "Total Amount",
+    "currency": "Currency",
+    "categoryName": "Category Name",
+    "categoryLimit": "Limit",
+    "color": "Color",
+    "icon": "Icon",
+    "transactionAmount": "Amount",
+    "transactionDescription": "Description",
+    "transactionDate": "Date",
+    "selectCategory": "Select a category",
+    "selectCurrency": "Select a currency",
+    "required": "Required",
+    "optional": "Optional",
+    "creating": "Creating...",
+    "adding": "Adding..."
+  },
+  "template": {
+    "title": "Select Template",
+    "description": "Choose a budget template to organize your categories by your lifestyle",
+    "student": "Student Template",
+    "family": "Family Template",
+    "freelancer": "Freelancer Template",
+    "minimalist": "Minimalist Template"
+  },
+  "templates": {
+    "editor": {
+      "createTitle": "Create Custom Template",
+      "editTitle": "Edit Template",
+      "name": "Template Name",
+      "namePlaceholder": "Enter template name",
+      "description": "Description",
+      "descriptionPlaceholder": "Describe your template",
+      "categories": "Categories",
+      "categoryName": "Category Name",
+      "categoryNamePlaceholder": "e.g., Housing, Food",
+      "percentage": "Percentage",
+      "icon": "Icon",
+      "color": "Color",
+      "addCategory": "Add Category",
+      "updateCategory": "Update Category",
+      "total": "Total",
+      "mustBe100": "must equal 100%",
+      "percentageError": "Total percentage must equal 100%",
+      "save": "Save Template"
+    }
+  },
+  "tax": {
+    "title": "Tax Configuration",
+    "description": "Select your country and applicable tax to include in budget calculations",
+    "country": "Country",
+    "taxType": "Tax Type",
+    "percentage": "Percentage",
+    "noTaxes": "No taxes available for this country",
+    "selectTax": "Select a tax",
+    "vatIncluded": "VAT Included"
+  },
+  "dialog": {
+    "newBudget": "New Budget",
+    "createBudget": "Create Budget",
+    "createCategory": "Create Category",
+    "addTransaction": "Add Transaction",
+    "month": "Month"
+  },
+  "cookies": {
+    "title": "Cookie Preferences",
+    "description": "We use cookies to enhance your experience. You can customize your preferences or accept all cookies.",
+    "acceptAll": "Accept All",
+    "customize": "Customize",
+    "onlyNecessary": "Only Necessary Cookies",
+    "settings": "Cookie Settings",
+    "necessary": "Necessary Cookies",
+    "necessaryDesc": "Required for the website to function properly. Cannot be disabled.",
+    "functional": "Functional Cookies",
+    "functionalDesc": "Remember your preferences and settings.",
+    "analytics": "Analytics Cookies",
+    "analyticsDesc": "Help us understand how you use the website.",
+    "save": "Save Preferences",
+    "manager": {
+      "title": "Cookie Manager",
+      "description": "Manage your cookie preferences and review what data is stored.",
+      "confirmClear": "Are you sure you want to clear all cookies?",
+      "clearAll": "Clear All"
+    }
+  },
+  "downloads": {
+    "start": "Start Download",
+    "pause": "Pause",
+    "resume": "Resume",
+    "retry": "Retry",
+    "error": "Error downloading file",
+    "success": "Download completed successfully!",
+    "complete": "complete"
+  },
+  "templates": {
+    "page": {
+      "title": "Budget Templates",
+      "noTemplates": "No Templates Yet",
+      "noTemplatesDesc": "Create your first custom template using the wizard or advanced editor"
+    },
+    "preset": "Preset",
+    "more": "more",
+    "duplicate": "Duplicate",
+    "automate": "Automate",
+    "editor": {
+      "createTitle": "Create Custom Template",
+      "editTitle": "Edit Template",
+      "name": "Template Name",
+      "namePlaceholder": "My Custom Template",
+      "description": "Description",
+      "descriptionPlaceholder": "Describe your budget template...",
+      "categories": "Categories",
+      "categoryName": "Name",
+      "categoryNamePlaceholder": "Category name",
+      "percentage": "Budget Percentage",
+      "icon": "Icon",
+      "color": "Color",
+      "addCategory": "Add Category",
+      "updateCategory": "Update Category",
+      "total": "Total",
+      "mustBe100": "must be 100%",
+      "percentageError": "Total percentages must equal exactly 100%",
+      "save": "Save Template"
+    },
+    "wizard": {
+      "title": "Template Wizard",
+      "basicInfo": "Basic Information",
+      "selectCategories": "Select Categories",
+      "selectCategoriesDesc": "Choose the categories you want to include in your template",
+      "selectedCount": "Selected",
+      "customize": "Customize Categories",
+      "autoDistribute": "Auto Distribute",
+      "review": "Review & Confirm",
+      "createTemplate": "Create Template",
+      "readyToCreate": "Your template is ready to create!",
+      "fixPercentages": "Please adjust percentages to total 100%"
+    },
+    "advanced": {
+      "title": "Advanced Editor"
+    },
+    "automation": {
+      "title": "Template Automation",
+      "description": "Set up automated rules to streamline your budget management",
+      "smartCategorizeDesc": "Automatically categorize transactions based on description and history",
+      "budgetAlertDesc": "Get notified when spending approaches category limits",
+      "recurringDesc": "Detect and track recurring transactions automatically",
+      "threshold": "Alert Threshold",
+      "confidence": "Confidence Level"
+    }
+  },
+  "feedback": {
+    "title": "Feedback",
+    "rating": "Rate your experience",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "submit": "Submit Feedback",
+    "sending": "Sending...",
+    "success": "Thank you for your feedback!",
+    "error": "Failed to submit feedback",
+    "captchaError": "Please complete the CAPTCHA verification"
+  },
+  "footer": {
+    "pioneerMessage": "This is a pioneering project in budget management. Any support or contribution to help its development would be greatly appreciated. Thank you for being part of this journey!",
+    "supportProject": "Support This Project",
+    "supportMessage": "Help keep this project alive and growing"
+  },
+  "professional": {
+    "title": "Create Professional Budget",
+    "description": "Create a detailed budget with line items, subtotals, and tax calculations",
+    "namePlaceholder": "e.g., Q1 2024 Project Budget",
+    "budgetItems": "Budget Items",
+    "description": "Description",
+    "quantity": "Quantity",
+    "unitPrice": "Unit Price",
+    "total": "Total",
+    "itemPlaceholder": "e.g., Consulting services",
+    "addItem": "Add Item",
+    "summary": "Summary",
+    "subtotal": "Subtotal"
+  },
+  "legal": {
+    "lastUpdated": "Last updated",
+    "questions": "Questions?",
+    "privacy": {
+      "title": "Privacy Policy",
+      "collection": "Information Collection",
+      "collectionDesc": "We collect minimal information necessary to provide our service. This includes budget data, categories, and transactions you create. All data is stored locally on your device and our servers.",
+      "usage": "How We Use Your Information",
+      "usageDesc": "Your data is used solely to provide budget tracking functionality. We do not sell or share your personal information with third parties.",
+      "security": "Data Security",
+      "securityDesc": "We implement industry-standard security measures to protect your data, including encryption and secure connections.",
+      "rights": "Your Rights",
+      "rightsDesc": "You have the right to access, modify, or delete your data at any time. Contact us for data-related requests."
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "acceptance": "Acceptance of Terms",
+      "acceptanceDesc": "By using this application, you agree to these terms. If you disagree, please do not use the service.",
+      "license": "License to Use",
+      "licenseDesc": "We grant you a non-exclusive, non-transferable license to use this application for personal budget management.",
+      "restrictions": "Restrictions",
+      "restrictionsDesc": "You may not reverse engineer, redistribute, or use this application for illegal purposes.",
+      "liability": "Limitation of Liability",
+      "liabilityDesc": "This application is provided as-is. We are not liable for any damages arising from its use."
+    },
+    "cookies": {
+      "title": "Cookie Policy",
+      "what": "What Are Cookies",
+      "whatDesc": "Cookies are small text files stored on your device that help us improve your experience.",
+      "types": "Types of Cookies We Use",
+      "typesDesc": "We use necessary cookies for functionality, functional cookies for preferences, and analytics cookies to understand usage patterns.",
+      "manage": "Managing Cookies",
+      "manageDesc": "You can manage cookie preferences through our cookie consent banner or your browser settings."
+    }
+  },
+  "downloads": {
+    "title": "Download App",
+    "description": "Download our app for your platform",
+    "windows": "Windows",
+    "mac": "macOS",
+    "linux": "Linux",
+    "android": "Android",
+    "ios": "iOS",
+    "start": "Start Download",
+    "retry": "Retry Download",
+    "complete": "Complete",
+    "success": "Download completed successfully!",
+    "error": "Download failed. Please try again.",
+    "stats": "Download Statistics"
+  }
+}

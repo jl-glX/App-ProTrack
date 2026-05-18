@@ -1,0 +1,250 @@
+{
+  "common": {
+    "appName": "Gestionnaire de Budget",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "back": "Retour",
+    "delete": "Supprimer",
+    "create": "Créer",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "edit": "Modifier",
+    "close": "Fermer",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "viewDetails": "Voir les détails",
+    "categories": "catégories",
+    "notFound": "Non trouvé",
+    "unknown": "Inconnu",
+    "confirmDelete": "Êtes-vous sûr de vouloir supprimer ceci ?"
+  },
+  "dashboard": {
+    "title": "Gestionnaire de Budget",
+    "subtitle": "Gérez vos budgets et suivez les dépenses par catégorie",
+    "noBudgets": "Aucun budget pour le moment",
+    "noBudgetsDesc": "Créez votre premier budget pour commencer",
+    "createBudget": "Créer un Budget",
+    "createProfessional": "Budget Professionnel",
+    "download": "Télécharger l'Application",
+    "templates": "Modèles"
+  },
+  "budget": {
+    "basicInfo": "Informations de Base",
+    "chooseTemplate": "Choisir un Modèle",
+    "taxConfig": "Configuration des Taxes",
+    "budgetType": "Type de Budget",
+    "personal": "Budget Personnel",
+    "professional": "Budget Professionnel"
+  },
+  "charts": {
+    "categoryBreakdown": "Répartition par Catégorie",
+    "spendingTrend": "Tendance des Dépenses",
+    "percentage": "Pourcentage",
+    "amount": "Montant",
+    "date": "Date",
+    "category": "Catégorie"
+  },
+  "forms": {
+    "budgetName": "Nom du Budget",
+    "budgetDescription": "Description (optionnel)",
+    "totalAmount": "Montant Total",
+    "currency": "Devise",
+    "categoryName": "Nom de la Catégorie",
+    "categoryLimit": "Limite",
+    "color": "Couleur",
+    "icon": "Icône",
+    "transactionAmount": "Montant",
+    "transactionDescription": "Description",
+    "transactionDate": "Date",
+    "selectCategory": "Sélectionnez une catégorie",
+    "required": "Requis",
+    "optional": "Optionnel",
+    "creating": "Création...",
+    "adding": "Ajout..."
+  },
+  "template": {
+    "title": "Sélectionner un Modèle",
+    "description": "Choisissez un modèle de budget pour organiser vos catégories selon votre style de vie",
+    "student": "Modèle Étudiant",
+    "family": "Modèle Familial",
+    "freelancer": "Modèle Indépendant",
+    "minimalist": "Modèle Minimaliste"
+  },
+  "tax": {
+    "title": "Configuration des Impôts",
+    "description": "Sélectionnez votre pays et l'impôt applicable à inclure dans les calculs du budget",
+    "country": "Pays",
+    "taxType": "Type d'Impôt",
+    "percentage": "Pourcentage",
+    "noTaxes": "Aucun impôt disponible pour ce pays",
+    "selectTax": "Sélectionnez un impôt",
+    "vatIncluded": "TVA Incluse"
+  },
+  "dialog": {
+    "newBudget": "Nouveau Budget",
+    "createBudget": "Créer un Budget",
+    "createCategory": "Créer une Catégorie",
+    "addTransaction": "Ajouter une Transaction",
+    "month": "Mois"
+  },
+  "cookies": {
+    "title": "Préférences des Cookies",
+    "description": "Nous utilisons des cookies pour améliorer votre expérience. Vous pouvez personnaliser vos préférences ou accepter tous les cookies.",
+    "acceptAll": "Tout Accepter",
+    "customize": "Personnaliser",
+    "onlyNecessary": "Cookies Nécessaires Uniquement",
+    "settings": "Paramètres des Cookies",
+    "necessary": "Cookies Nécessaires",
+    "necessaryDesc": "Requis pour que le site fonctionne correctement. Ne peuvent pas être désactivés.",
+    "functional": "Cookies Fonctionnels",
+    "functionalDesc": "Mémorisent vos préférences et paramètres.",
+    "analytics": "Cookies Analytiques",
+    "analyticsDesc": "Nous aident à comprendre comment vous utilisez le site.",
+    "save": "Enregistrer les Préférences",
+    "manager": {
+      "title": "Gestionnaire de Cookies",
+      "description": "Gérez vos préférences de cookies et examinez les données stockées.",
+      "confirmClear": "Êtes-vous sûr de vouloir effacer tous les cookies?",
+      "clearAll": "Tout Effacer"
+    }
+  },
+  "downloads": {
+    "title": "Télécharger l'application",
+    "description": "Téléchargez notre application pour votre plateforme",
+    "windows": "Windows",
+    "mac": "macOS",
+    "linux": "Linux",
+    "android": "Android",
+    "ios": "iOS",
+    "start": "Démarrer le téléchargement",
+    "pause": "Pause",
+    "resume": "Reprendre",
+    "retry": "Réessayer",
+    "error": "Erreur lors du téléchargement du fichier",
+    "success": "Téléchargement terminé avec succès !",
+    "complete": "Terminé",
+    "stats": "Statistiques de téléchargement"
+  },
+  "templates": {
+    "page": {
+      "title": "Modèles de budget",
+      "noTemplates": "Pas encore de modèles",
+      "noTemplatesDesc": "Créez votre premier modèle personnalisé avec l'assistant ou l'éditeur avancé"
+    },
+    "preset": "Prédéfini",
+    "more": "plus",
+    "duplicate": "Dupliquer",
+    "automate": "Automatiser",
+    "editor": {
+      "createTitle": "Créer un modèle personnalisé",
+      "editTitle": "Modifier le modèle",
+      "name": "Nom du modèle",
+      "namePlaceholder": "Mon modèle personnalisé",
+      "description": "Description",
+      "descriptionPlaceholder": "Décrivez votre modèle de budget...",
+      "categories": "Catégories",
+      "categoryName": "Nom",
+      "categoryNamePlaceholder": "Nom de la catégorie",
+      "percentage": "Pourcentage du budget",
+      "icon": "Icône",
+      "color": "Couleur",
+      "addCategory": "Ajouter une catégorie",
+      "updateCategory": "Mettre à jour la catégorie",
+      "total": "Total",
+      "mustBe100": "doit être 100%",
+      "percentageError": "Le total des pourcentages doit être exactement 100%",
+      "save": "Enregistrer le modèle"
+    },
+    "wizard": {
+      "title": "Assistant de modèle",
+      "basicInfo": "Informations de base",
+      "selectCategories": "Sélectionner les catégories",
+      "selectCategoriesDesc": "Choisissez les catégories que vous souhaitez inclure dans votre modèle",
+      "selectedCount": "Sélectionnées",
+      "customize": "Personnaliser les catégories",
+      "autoDistribute": "Distribution automatique",
+      "review": "Réviser et confirmer",
+      "createTemplate": "Créer le modèle",
+      "readyToCreate": "Votre modèle est prêt à être créé !",
+      "fixPercentages": "Veuillez ajuster les pourcentages pour atteindre 100%"
+    },
+    "advanced": {
+      "title": "Éditeur avancé"
+    },
+    "automation": {
+      "title": "Automatisation de modèle",
+      "description": "Configurez des règles automatiques pour rationaliser la gestion de votre budget",
+      "smartCategorizeDesc": "Catégorisez automatiquement les transactions en fonction de la description et de l'historique",
+      "budgetAlertDesc": "Recevez des notifications lorsque les dépenses approchent des limites de catégorie",
+      "recurringDesc": "Détectez et suivez automatiquement les transactions récurrentes",
+      "threshold": "Seuil d'alerte",
+      "confidence": "Niveau de confiance"
+    }
+  },
+  "feedback": {
+    "title": "Commentaires",
+    "rating": "Évaluez votre expérience",
+    "name": "Nom",
+    "email": "E-mail",
+    "message": "Message",
+    "submit": "Envoyer les Commentaires",
+    "sending": "Envoi...",
+    "success": "Merci pour vos commentaires!",
+    "error": "Échec de l'envoi des commentaires",
+    "captchaError": "Veuillez compléter la vérification CAPTCHA"
+  },
+  "footer": {
+    "pioneerMessage": "Il s'agit d'un projet pionnier en gestion budgétaire. Tout soutien ou contribution pour aider son développement serait grandement apprécié. Merci de faire partie de cette aventure!",
+    "supportProject": "Soutenir Ce Projet",
+    "supportMessage": "Aidez à maintenir ce projet vivant et en croissance"
+  },
+  "professional": {
+    "title": "Créer un Budget Professionnel",
+    "description": "Créez un budget détaillé avec des lignes d'articles, des sous-totaux et des calculs de taxes",
+    "namePlaceholder": "ex., Budget Projet Q1 2024",
+    "budgetItems": "Articles du Budget",
+    "description": "Description",
+    "quantity": "Quantité",
+    "unitPrice": "Prix Unitaire",
+    "total": "Total",
+    "itemPlaceholder": "ex., Services de conseil",
+    "addItem": "Ajouter un Article",
+    "summary": "Résumé",
+    "subtotal": "Sous-total"
+  },
+  "legal": {
+    "lastUpdated": "Dernière mise à jour",
+    "questions": "Des questions?",
+    "privacy": {
+      "title": "Politique de Confidentialité",
+      "collection": "Collecte d'Informations",
+      "collectionDesc": "Nous collectons un minimum d'informations nécessaires pour fournir notre service.",
+      "usage": "Comment Nous Utilisons Vos Informations",
+      "usageDesc": "Vos données sont utilisées uniquement pour fournir des fonctionnalités de suivi budgétaire.",
+      "security": "Sécurité des Données",
+      "securityDesc": "Nous mettons en œuvre des mesures de sécurité standard de l'industrie.",
+      "rights": "Vos Droits",
+      "rightsDesc": "Vous avez le droit d'accéder, de modifier ou de supprimer vos données à tout moment."
+    },
+    "terms": {
+      "title": "Conditions d'Utilisation",
+      "acceptance": "Acceptation des Conditions",
+      "acceptanceDesc": "En utilisant cette application, vous acceptez ces conditions.",
+      "license": "Licence d'Utilisation",
+      "licenseDesc": "Nous vous accordons une licence non exclusive pour utiliser cette application.",
+      "restrictions": "Restrictions",
+      "restrictionsDesc": "Vous ne pouvez pas procéder à l'ingénierie inverse ou redistribuer cette application.",
+      "liability": "Limitation de Responsabilité",
+      "liabilityDesc": "Cette application est fournie telle quelle."
+    },
+    "cookies": {
+      "title": "Politique relative aux Cookies",
+      "what": "Que Sont les Cookies",
+      "whatDesc": "Les cookies sont de petits fichiers texte qui nous aident à améliorer votre expérience.",
+      "types": "Types de Cookies Utilisés",
+      "typesDesc": "Nous utilisons des cookies nécessaires, fonctionnels et analytiques.",
+      "manage": "Gérer les Cookies",
+      "manageDesc": "Vous pouvez gérer les préférences via notre bannière de consentement."
+    }
+  }
+}

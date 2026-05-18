@@ -1,0 +1,250 @@
+{
+  "common": {
+    "appName": "Budget-Manager",
+    "loading": "Lädt...",
+    "error": "Fehler",
+    "back": "Zurück",
+    "delete": "Löschen",
+    "create": "Erstellen",
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "edit": "Bearbeiten",
+    "close": "Schließen",
+    "previous": "Zurück",
+    "next": "Weiter",
+    "viewDetails": "Details anzeigen",
+    "categories": "Kategorien",
+    "notFound": "Nicht gefunden",
+    "unknown": "Unbekannt",
+    "confirmDelete": "Sind Sie sicher, dass Sie dies löschen möchten?"
+  },
+  "dashboard": {
+    "title": "Budget-Manager",
+    "subtitle": "Verwalten Sie Ihre Budgets und verfolgen Sie Ausgaben nach Kategorien",
+    "noBudgets": "Noch keine Budgets",
+    "noBudgetsDesc": "Erstellen Sie Ihr erstes Budget, um zu beginnen",
+    "createBudget": "Budget Erstellen",
+    "createProfessional": "Professionelles Budget",
+    "download": "App Herunterladen",
+    "templates": "Vorlagen"
+  },
+  "budget": {
+    "basicInfo": "Grundlegende Informationen",
+    "chooseTemplate": "Vorlage Auswählen",
+    "taxConfig": "Steuerkonfiguration",
+    "budgetType": "Budget-Typ",
+    "personal": "Persönliches Budget",
+    "professional": "Professionelles Budget"
+  },
+  "charts": {
+    "categoryBreakdown": "Kategorieaufschlüsselung",
+    "spendingTrend": "Ausgabentrend",
+    "percentage": "Prozentsatz",
+    "amount": "Betrag",
+    "date": "Datum",
+    "category": "Kategorie"
+  },
+  "forms": {
+    "budgetName": "Budget-Name",
+    "budgetDescription": "Beschreibung (optional)",
+    "totalAmount": "Gesamtbetrag",
+    "currency": "Währung",
+    "categoryName": "Kategorie-Name",
+    "categoryLimit": "Grenze",
+    "color": "Farbe",
+    "icon": "Symbol",
+    "transactionAmount": "Betrag",
+    "transactionDescription": "Beschreibung",
+    "transactionDate": "Datum",
+    "selectCategory": "Wähle eine Kategorie",
+    "required": "Erforderlich",
+    "optional": "Optional",
+    "creating": "Wird erstellt...",
+    "adding": "Wird hinzugefügt..."
+  },
+  "template": {
+    "title": "Vorlage wählen",
+    "description": "Wähle eine Budget-Vorlage, um deine Kategorien nach deinem Lebensstil zu organisieren",
+    "student": "Studenten-Vorlage",
+    "family": "Familien-Vorlage",
+    "freelancer": "Freelancer-Vorlage",
+    "minimalist": "Minimalistische Vorlage"
+  },
+  "tax": {
+    "title": "Steuerkonfiguration",
+    "description": "Wähle dein Land und die anwendbare Steuer aus, um sie in die Budget-Berechnungen einzubeziehen",
+    "country": "Land",
+    "taxType": "Steuertyp",
+    "percentage": "Prozentsatz",
+    "noTaxes": "Keine Steuern für dieses Land verfügbar",
+    "selectTax": "Wähle eine Steuer",
+    "vatIncluded": "MwSt enthalten"
+  },
+  "dialog": {
+    "newBudget": "Neues Budget",
+    "createBudget": "Budget erstellen",
+    "createCategory": "Kategorie erstellen",
+    "addTransaction": "Transaktion hinzufügen",
+    "month": "Monat"
+  },
+  "cookies": {
+    "title": "Cookie-Einstellungen",
+    "description": "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. Sie können Ihre Einstellungen anpassen oder alle Cookies akzeptieren.",
+    "acceptAll": "Alle Akzeptieren",
+    "customize": "Anpassen",
+    "onlyNecessary": "Nur Notwendige Cookies",
+    "settings": "Cookie-Einstellungen",
+    "necessary": "Notwendige Cookies",
+    "necessaryDesc": "Erforderlich für die ordnungsgemäße Funktion der Website. Können nicht deaktiviert werden.",
+    "functional": "Funktionale Cookies",
+    "functionalDesc": "Speichern Ihre Präferenzen und Einstellungen.",
+    "analytics": "Analyse-Cookies",
+    "analyticsDesc": "Helfen uns zu verstehen, wie Sie die Website nutzen.",
+    "save": "Einstellungen Speichern",
+    "manager": {
+      "title": "Cookie-Manager",
+      "description": "Verwalten Sie Ihre Cookie-Einstellungen und überprüfen Sie gespeicherte Daten.",
+      "confirmClear": "Sind Sie sicher, dass Sie alle Cookies löschen möchten?",
+      "clearAll": "Alle Löschen"
+    }
+  },
+  "downloads": {
+    "title": "App herunterladen",
+    "description": "Laden Sie unsere App für Ihre Plattform herunter",
+    "windows": "Windows",
+    "mac": "macOS",
+    "linux": "Linux",
+    "android": "Android",
+    "ios": "iOS",
+    "start": "Download starten",
+    "pause": "Pause",
+    "resume": "Fortsetzen",
+    "retry": "Wiederholen",
+    "error": "Fehler beim Herunterladen der Datei",
+    "success": "Download erfolgreich abgeschlossen!",
+    "complete": "Abgeschlossen",
+    "stats": "Download-Statistiken"
+  },
+  "templates": {
+    "page": {
+      "title": "Budgetvorlagen",
+      "noTemplates": "Noch keine Vorlagen",
+      "noTemplatesDesc": "Erstellen Sie Ihre erste benutzerdefinierte Vorlage mit dem Assistenten oder erweiterten Editor"
+    },
+    "preset": "Vorgabe",
+    "more": "mehr",
+    "duplicate": "Duplizieren",
+    "automate": "Automatisieren",
+    "editor": {
+      "createTitle": "Benutzerdefinierte Vorlage erstellen",
+      "editTitle": "Vorlage bearbeiten",
+      "name": "Vorlagenname",
+      "namePlaceholder": "Meine benutzerdefinierte Vorlage",
+      "description": "Beschreibung",
+      "descriptionPlaceholder": "Beschreiben Sie Ihre Budgetvorlage...",
+      "categories": "Kategorien",
+      "categoryName": "Name",
+      "categoryNamePlaceholder": "Kategoriename",
+      "percentage": "Budgetprozentsatz",
+      "icon": "Symbol",
+      "color": "Farbe",
+      "addCategory": "Kategorie hinzufügen",
+      "updateCategory": "Kategorie aktualisieren",
+      "total": "Gesamt",
+      "mustBe100": "muss 100% sein",
+      "percentageError": "Die Gesamtprozentsätze müssen genau 100% betragen",
+      "save": "Vorlage speichern"
+    },
+    "wizard": {
+      "title": "Vorlagen-Assistent",
+      "basicInfo": "Grundinformationen",
+      "selectCategories": "Kategorien auswählen",
+      "selectCategoriesDesc": "Wählen Sie die Kategorien aus, die Sie in Ihre Vorlage aufnehmen möchten",
+      "selectedCount": "Ausgewählt",
+      "customize": "Kategorien anpassen",
+      "autoDistribute": "Automatisch verteilen",
+      "review": "Überprüfen und bestätigen",
+      "createTemplate": "Vorlage erstellen",
+      "readyToCreate": "Ihre Vorlage ist bereit!",
+      "fixPercentages": "Bitte passen Sie die Prozentsätze auf 100% an"
+    },
+    "advanced": {
+      "title": "Erweiterter Editor"
+    },
+    "automation": {
+      "title": "Vorlagenautomatisierung",
+      "description": "Richten Sie automatisierte Regeln ein, um Ihre Budgetverwaltung zu optimieren",
+      "smartCategorizeDesc": "Kategorisieren Sie Transaktionen automatisch anhand von Beschreibung und Verlauf",
+      "budgetAlertDesc": "Erhalten Sie Benachrichtigungen, wenn sich Ausgaben den Kategoriengrenzen nähern",
+      "recurringDesc": "Erkennen und verfolgen Sie wiederkehrende Transaktionen automatisch",
+      "threshold": "Alarmschwelle",
+      "confidence": "Konfidenzniveau"
+    }
+  },
+  "feedback": {
+    "title": "Feedback",
+    "rating": "Bewerten Sie Ihre Erfahrung",
+    "name": "Name",
+    "email": "E-Mail",
+    "message": "Nachricht",
+    "submit": "Feedback Senden",
+    "sending": "Wird gesendet...",
+    "success": "Vielen Dank für Ihr Feedback!",
+    "error": "Fehler beim Senden des Feedbacks",
+    "captchaError": "Bitte vervollständigen Sie die CAPTCHA-Verifizierung"
+  },
+  "footer": {
+    "pioneerMessage": "Dies ist ein Pionierprojekt im Budgetmanagement. Jede Unterstützung oder Beitrag zur Entwicklung wäre sehr geschätzt. Danke, dass Sie Teil dieser Reise sind!",
+    "supportProject": "Unterstützen Sie Dieses Projekt",
+    "supportMessage": "Helfen Sie, dieses Projekt am Leben zu erhalten und wachsen zu lassen"
+  },
+  "professional": {
+    "title": "Professionelles Budget Erstellen",
+    "description": "Erstellen Sie ein detailliertes Budget mit Einzelposten, Zwischensummen und Steuerberechnungen",
+    "namePlaceholder": "z.B., Q1 2024 Projektbudget",
+    "budgetItems": "Budgetposten",
+    "description": "Beschreibung",
+    "quantity": "Menge",
+    "unitPrice": "Stückpreis",
+    "total": "Gesamt",
+    "itemPlaceholder": "z.B., Beratungsleistungen",
+    "addItem": "Artikel hinzufügen",
+    "summary": "Zusammenfassung",
+    "subtotal": "Zwischensumme"
+  },
+  "legal": {
+    "lastUpdated": "Zuletzt aktualisiert",
+    "questions": "Fragen?",
+    "privacy": {
+      "title": "Datenschutzrichtlinie",
+      "collection": "Informationssammlung",
+      "collectionDesc": "Wir sammeln minimale Informationen, die für unseren Service notwendig sind.",
+      "usage": "Wie Wir Ihre Informationen Verwenden",
+      "usageDesc": "Ihre Daten werden ausschließlich zur Bereitstellung von Budget-Tracking-Funktionen verwendet.",
+      "security": "Datensicherheit",
+      "securityDesc": "Wir implementieren branchenübliche Sicherheitsmaßnahmen.",
+      "rights": "Ihre Rechte",
+      "rightsDesc": "Sie haben das Recht, jederzeit auf Ihre Daten zuzugreifen, sie zu ändern oder zu löschen."
+    },
+    "terms": {
+      "title": "Nutzungsbedingungen",
+      "acceptance": "Akzeptanz der Bedingungen",
+      "acceptanceDesc": "Durch die Nutzung dieser Anwendung stimmen Sie diesen Bedingungen zu.",
+      "license": "Nutzungslizenz",
+      "licenseDesc": "Wir gewähren Ihnen eine nicht-exklusive Lizenz zur Nutzung dieser Anwendung.",
+      "restrictions": "Einschränkungen",
+      "restrictionsDesc": "Sie dürfen diese Anwendung nicht zurückentwickeln oder weiterverbreiten.",
+      "liability": "Haftungsbeschränkung",
+      "liabilityDesc": "Diese Anwendung wird wie besehen bereitgestellt."
+    },
+    "cookies": {
+      "title": "Cookie-Richtlinie",
+      "what": "Was Sind Cookies",
+      "whatDesc": "Cookies sind kleine Textdateien, die uns helfen, Ihre Erfahrung zu verbessern.",
+      "types": "Arten von Cookies, die Wir Verwenden",
+      "typesDesc": "Wir verwenden notwendige, funktionale und Analyse-Cookies.",
+      "manage": "Cookies Verwalten",
+      "manageDesc": "Sie können Cookie-Präferenzen über unser Zustimmungsbanner verwalten."
+    }
+  }
+}
