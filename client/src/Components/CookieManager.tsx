@@ -1,5 +1,11 @@
 import { useState, useEffect } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "./ui/dialog";
 import { Button } from "./ui/button";
 import { Switch } from "./ui/switch";
 import { Label } from "./ui/label";
@@ -29,7 +35,9 @@ export function CookieManager() {
   }, [open]);
 
   function handleSave() {
-    Cookies.set("cookie-consent", JSON.stringify(preferences), { expires: 365 });
+    Cookies.set("cookie-consent", JSON.stringify(preferences), {
+      expires: 365,
+    });
     setOpen(false);
   }
 

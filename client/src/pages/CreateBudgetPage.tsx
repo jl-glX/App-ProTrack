@@ -4,7 +4,13 @@ import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
 import { Card } from "../components/ui/card";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "../components/ui/select";
 import { CurrencySelector } from "../components/CurrencySelector";
 import { useTemplates } from "../hooks/useTemplates";
 import { useTaxes } from "../hooks/useTaxes";
@@ -26,7 +32,9 @@ export function CreateBudgetPage() {
   const [taxes, setTaxes] = useState<TaxRate[]>([]);
   const [loading, setLoading] = useState(false);
   const [selectedTax, setSelectedTax] = useState<TaxRate | null>(null);
-  const [budgetType, setBudgetType] = useState<"personal" | "professional">("personal");
+  const [budgetType, setBudgetType] = useState<"personal" | "professional">(
+    "personal",
+  );
   const [formData, setFormData] = useState({
     name: "",
     description: "",
@@ -111,7 +119,9 @@ export function CreateBudgetPage() {
 
   const isStepValid = () => {
     if (step === 1) {
-      return formData.name && (budgetType === "professional" || formData.totalAmount);
+      return (
+        formData.name && (budgetType === "professional" || formData.totalAmount)
+      );
     }
     if (step === 2) {
       return true;
@@ -149,7 +159,9 @@ export function CreateBudgetPage() {
                     {s}
                   </div>
                   {s < 3 && (
-                    <div className={`h-1 w-16 mx-2 ${s < step ? "bg-blue-500" : "bg-gray-200"}`} />
+                    <div
+                      className={`h-1 w-16 mx-2 ${s < step ? "bg-blue-500" : "bg-gray-200"}`}
+                    />
                   )}
                 </div>
               ))}
@@ -159,16 +171,27 @@ export function CreateBudgetPage() {
           <form onSubmit={handleSubmit}>
             {step === 1 && (
               <div className="space-y-4">
-                <h2 className="text-2xl font-bold mb-4">{t("budget.basicInfo")}</h2>
+                <h2 className="text-2xl font-bold mb-4">
+                  {t("budget.basicInfo")}
+                </h2>
                 <div>
                   <Label htmlFor="budgetType">{t("budget.budgetType")}</Label>
-                  <Select value={budgetType} onValueChange={(value: "personal" | "professional") => setBudgetType(value)}>
+                  <Select
+                    value={budgetType}
+                    onValueChange={(value: "personal" | "professional") =>
+                      setBudgetType(value)
+                    }
+                  >
                     <SelectTrigger>
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="personal">{t("budget.personal")}</SelectItem>
-                      <SelectItem value="professional">{t("budget.professional")}</SelectItem>
+                      <SelectItem value="personal">
+                        {t("budget.personal")}
+                      </SelectItem>
+                      <SelectItem value="professional">
+                        {t("budget.professional")}
+                      </SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -177,13 +200,21 @@ export function CreateBudgetPage() {
                   <Input
                     id="name"
                     value={formData.name}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder={budgetType === "professional" ? t("professional.namePlaceholder") : "e.g., Monthly Budget"}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
+                    placeholder={
+                      budgetType === "professional"
+                        ? t("professional.namePlaceholder")
+                        : "e.g., Monthly Budget"
+                    }
                     required
                   />
                 </div>
                 <div>
-                  <Label htmlFor="description">{t("forms.budgetDescription")}</Label>
+                  <Label htmlFor="description">
+                    {t("forms.budgetDescription")}
+                  </Label>
                   <Input
                     id="description"
                     value={formData.description}
@@ -203,7 +234,10 @@ export function CreateBudgetPage() {
                         step="0.01"
                         value={formData.totalAmount}
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                          setFormData({ ...formData, totalAmount: e.target.value })
+                          setFormData({
+                            ...formData,
+                            totalAmount: e.target.value,
+                          })
                         }
                         placeholder="0.00"
                         required
@@ -211,14 +245,18 @@ export function CreateBudgetPage() {
                     </div>
                     <CurrencySelector
                       value={formData.currency}
-                      onChange={(value) => setFormData({ ...formData, currency: value })}
+                      onChange={(value) =>
+                        setFormData({ ...formData, currency: value })
+                      }
                       label={t("forms.currency")}
                     />
                   </div>
                 ) : (
                   <CurrencySelector
                     value={formData.currency}
-                    onChange={(value) => setFormData({ ...formData, currency: value })}
+                    onChange={(value) =>
+                      setFormData({ ...formData, currency: value })
+                    }
                     label={t("forms.currency")}
                   />
                 )}
@@ -227,7 +265,9 @@ export function CreateBudgetPage() {
 
             {step === 2 && budgetType === "personal" && (
               <div className="space-y-4">
-                <h2 className="text-2xl font-bold mb-4">{t("budget.chooseTemplate")}</h2>
+                <h2 className="text-2xl font-bold mb-4">
+                  {t("budget.chooseTemplate")}
+                </h2>
                 <p className="text-gray-600 text-sm mb-4">
                   {t("template.description")}
                 </p>
@@ -243,7 +283,9 @@ export function CreateBudgetPage() {
 
             {step === 3 && budgetType === "personal" && (
               <div className="space-y-4">
-                <h2 className="text-2xl font-bold mb-4">{t("budget.taxConfig")}</h2>
+                <h2 className="text-2xl font-bold mb-4">
+                  {t("budget.taxConfig")}
+                </h2>
                 <p className="text-gray-600 text-sm mb-4">
                   {t("tax.description")}
                 </p>
@@ -312,10 +354,10 @@ export function CreateBudgetPage() {
 
           {step === 2 && budgetType === "professional" && (
             <div className="mt-6">
-              <h2 className="text-2xl font-bold mb-6">{t("professional.budgetItems")}</h2>
-              <ProfessionalBudgetEditor 
-                onSave={handleProfessionalBudgetSave}
-              />
+              <h2 className="text-2xl font-bold mb-6">
+                {t("professional.budgetItems")}
+              </h2>
+              <ProfessionalBudgetEditor onSave={handleProfessionalBudgetSave} />
             </div>
           )}
         </Card>

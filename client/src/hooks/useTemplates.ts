@@ -24,7 +24,9 @@ export function useTemplates() {
     }
   };
 
-  const createTemplate = async (template: Omit<BudgetTemplate, "id" | "createdAt">) => {
+  const createTemplate = async (
+    template: Omit<BudgetTemplate, "id" | "createdAt">,
+  ) => {
     try {
       const response = await fetch("/api/templates", {
         method: "POST",
@@ -40,7 +42,10 @@ export function useTemplates() {
     }
   };
 
-  const updateTemplate = async (id: string, template: Partial<BudgetTemplate>) => {
+  const updateTemplate = async (
+    id: string,
+    template: Partial<BudgetTemplate>,
+  ) => {
     try {
       const response = await fetch(`/api/templates/${id}`, {
         method: "PUT",
@@ -58,7 +63,9 @@ export function useTemplates() {
 
   const deleteTemplate = async (id: string) => {
     try {
-      const response = await fetch(`/api/templates/${id}`, { method: "DELETE" });
+      const response = await fetch(`/api/templates/${id}`, {
+        method: "DELETE",
+      });
       if (!response.ok) throw new Error("Failed to delete template");
       setTemplates(templates.filter((t) => t.id !== id));
     } catch (err) {
@@ -66,5 +73,13 @@ export function useTemplates() {
     }
   };
 
-  return { templates, loading, error, fetchTemplates, createTemplate, updateTemplate, deleteTemplate };
+  return {
+    templates,
+    loading,
+    error,
+    fetchTemplates,
+    createTemplate,
+    updateTemplate,
+    deleteTemplate,
+  };
 }

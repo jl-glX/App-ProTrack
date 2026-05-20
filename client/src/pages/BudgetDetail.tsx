@@ -32,7 +32,7 @@ export function BudgetDetail() {
       <div className="min-h-screen bg-gray-50 px-4 py-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center py-12">
-            <p className="text-gray-500">{t('common.loading')}</p>
+            <p className="text-gray-500">{t("common.loading")}</p>
           </div>
         </div>
       </div>
@@ -44,7 +44,7 @@ export function BudgetDetail() {
       <div className="min-h-screen bg-gray-50 px-4 py-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center py-12">
-            <p className="text-gray-500">{t('budget.notFound')}</p>
+            <p className="text-gray-500">{t("budget.notFound")}</p>
           </div>
         </div>
       </div>
@@ -53,7 +53,8 @@ export function BudgetDetail() {
 
   const spent = categories.reduce((sum, cat) => sum + cat.spent, 0);
   const remaining = budget.totalAmount - spent;
-  const percentage = budget.totalAmount > 0 ? (spent / budget.totalAmount) * 100 : 0;
+  const percentage =
+    budget.totalAmount > 0 ? (spent / budget.totalAmount) * 100 : 0;
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -64,34 +65,38 @@ export function BudgetDetail() {
           className="mb-6 gap-2 hover-lift"
         >
           <ArrowLeft className="w-4 h-4" />
-          {t('common.back')}
+          {t("common.back")}
         </Button>
 
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6 mb-6 glass-modern">
           <div className="flex justify-between items-start mb-6">
             <div>
-              <h1 className="responsive-heading text-gray-900">{budget.name}</h1>
+              <h1 className="responsive-heading text-gray-900">
+                {budget.name}
+              </h1>
               {budget.description && (
-                <p className="responsive-text text-gray-600 mt-1">{budget.description}</p>
+                <p className="responsive-text text-gray-600 mt-1">
+                  {budget.description}
+                </p>
               )}
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
             <Card className="p-4 bg-blue-50 border-blue-200">
-              <p className="text-sm text-gray-600">{t('budget.totalBudget')}</p>
+              <p className="text-sm text-gray-600">{t("budget.totalBudget")}</p>
               <p className="text-2xl font-bold text-blue-600">
                 ${budget.totalAmount.toFixed(2)}
               </p>
             </Card>
             <Card className="p-4 bg-orange-50 border-orange-200">
-              <p className="text-sm text-gray-600">{t('budget.spent')}</p>
+              <p className="text-sm text-gray-600">{t("budget.spent")}</p>
               <p className="text-2xl font-bold text-orange-600">
                 ${spent.toFixed(2)}
               </p>
             </Card>
             <Card className="p-4 bg-green-50 border-green-200">
-              <p className="text-sm text-gray-600">{t('budget.remaining')}</p>
+              <p className="text-sm text-gray-600">{t("budget.remaining")}</p>
               <p className="text-2xl font-bold text-green-600">
                 ${remaining.toFixed(2)}
               </p>
@@ -100,7 +105,9 @@ export function BudgetDetail() {
 
           <div>
             <div className="flex justify-between mb-2">
-              <span className="text-sm font-medium">{t('budget.overallProgress')}</span>
+              <span className="text-sm font-medium">
+                {t("budget.overallProgress")}
+              </span>
               <span className="text-sm font-medium text-gray-600">
                 {percentage.toFixed(0)}%
               </span>
@@ -108,7 +115,11 @@ export function BudgetDetail() {
             <div className="w-full bg-gray-200 rounded-full h-4">
               <div
                 className={`h-4 rounded-full transition-all ${
-                  percentage > 90 ? "bg-red-500" : percentage > 75 ? "bg-yellow-500" : "bg-green-500"
+                  percentage > 90
+                    ? "bg-red-500"
+                    : percentage > 75
+                      ? "bg-yellow-500"
+                      : "bg-green-500"
                 }`}
                 style={{ width: `${Math.min(percentage, 100)}%` }}
               ></div>
@@ -117,7 +128,10 @@ export function BudgetDetail() {
         </div>
 
         <div className="mb-6 tablet-padding">
-          <BudgetAnalytics categories={categories} totalBudget={budget.totalAmount} />
+          <BudgetAnalytics
+            categories={categories}
+            totalBudget={budget.totalAmount}
+          />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6 tablet-grid-2">
@@ -133,7 +147,9 @@ export function BudgetDetail() {
           <div className="lg:col-span-2">
             <Card className="p-4 sm:p-6 glass-modern">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
-                <h2 className="text-xl font-semibold">{t('budget.categories')}</h2>
+                <h2 className="text-xl font-semibold">
+                  {t("budget.categories")}
+                </h2>
                 <CreateCategoryDialog
                   budgetId={budget.id}
                   onCreate={createCategory}
@@ -142,7 +158,7 @@ export function BudgetDetail() {
 
               {categories.length === 0 ? (
                 <div className="text-center py-8">
-                  <p className="text-gray-500">{t('budget.noCategories')}</p>
+                  <p className="text-gray-500">{t("budget.noCategories")}</p>
                 </div>
               ) : (
                 <div className="space-y-4">
@@ -171,7 +187,9 @@ export function BudgetDetail() {
 
           <div>
             <Card className="p-4 sm:p-6 sticky top-4 glass-modern">
-              <h2 className="text-xl font-semibold mb-4">{t('budget.recentTransactions')}</h2>
+              <h2 className="text-xl font-semibold mb-4">
+                {t("budget.recentTransactions")}
+              </h2>
               <AddTransactionDialog
                 budgetId={budget.id}
                 categories={categories}
@@ -180,11 +198,13 @@ export function BudgetDetail() {
 
               <div className="mt-6 space-y-3 max-h-96 overflow-y-auto">
                 {transactions.length === 0 ? (
-                  <p className="text-center text-gray-500 py-4">{t('budget.noTransactions')}</p>
+                  <p className="text-center text-gray-500 py-4">
+                    {t("budget.noTransactions")}
+                  </p>
                 ) : (
                   transactions.slice(0, 10).map((transaction) => {
                     const category = categories.find(
-                      (c) => c.id === transaction.categoryId
+                      (c) => c.id === transaction.categoryId,
                     );
                     return (
                       <div
@@ -192,7 +212,9 @@ export function BudgetDetail() {
                         className="flex justify-between items-start p-3 bg-gray-50 rounded-lg text-sm"
                       >
                         <div>
-                           <p className="font-medium">{category?.name || t('common.unknown')}</p>
+                          <p className="font-medium">
+                            {category?.name || t("common.unknown")}
+                          </p>
                           {transaction.description && (
                             <p className="text-xs text-gray-500">
                               {transaction.description}

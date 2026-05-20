@@ -22,7 +22,10 @@ interface TemplateAutomationProps {
   templateId: string;
 }
 
-export function TemplateAutomation({ open, onOpenChange }: TemplateAutomationProps) {
+export function TemplateAutomation({
+  open,
+  onOpenChange,
+}: TemplateAutomationProps) {
   const { t } = useTranslation();
   const [rules, setRules] = useState<AutomationRule[]>([
     {
@@ -30,37 +33,44 @@ export function TemplateAutomation({ open, onOpenChange }: TemplateAutomationPro
       name: "Auto-categorize transactions",
       type: "smart-categorize",
       enabled: true,
-      config: { confidence: 0.8 }
+      config: { confidence: 0.8 },
     },
     {
       id: "2",
       name: "Budget limit alerts",
       type: "budget-alert",
       enabled: true,
-      config: { threshold: 90 }
+      config: { threshold: 90 },
     },
     {
       id: "3",
       name: "Recurring transaction detection",
       type: "recurring",
       enabled: false,
-      config: { minOccurrences: 3 }
+      config: { minOccurrences: 3 },
     },
   ]);
 
   function toggleRule(id: string) {
-    setRules(rules.map(rule => 
-      rule.id === id ? { ...rule, enabled: !rule.enabled } : rule
-    ));
+    setRules(
+      rules.map((rule) =>
+        rule.id === id ? { ...rule, enabled: !rule.enabled } : rule,
+      ),
+    );
   }
 
   function getIcon(type: AutomationRule["type"]) {
     switch (type) {
-      case "smart-categorize": return <Bot className="w-5 h-5" />;
-      case "budget-alert": return <Bell className="w-5 h-5" />;
-      case "recurring": return <Calendar className="w-5 h-5" />;
-      case "category-limit": return <TrendingUp className="w-5 h-5" />;
-      default: return <Zap className="w-5 h-5" />;
+      case "smart-categorize":
+        return <Bot className="w-5 h-5" />;
+      case "budget-alert":
+        return <Bell className="w-5 h-5" />;
+      case "recurring":
+        return <Calendar className="w-5 h-5" />;
+      case "category-limit":
+        return <TrendingUp className="w-5 h-5" />;
+      default:
+        return <Zap className="w-5 h-5" />;
     }
   }
 
@@ -75,43 +85,64 @@ export function TemplateAutomation({ open, onOpenChange }: TemplateAutomationPro
         </DialogHeader>
 
         <div className="space-y-4">
-          <p className="text-gray-600">{t("templates.automation.description")}</p>
+          <p className="text-gray-600">
+            {t("templates.automation.description")}
+          </p>
 
           <div className="space-y-3">
             {rules.map((rule) => (
               <Card key={rule.id} className="p-4">
                 <div className="flex items-start justify-between">
                   <div className="flex items-start gap-3 flex-1">
-                    <div className={`p-2 rounded-lg ${
-                      rule.enabled ? "bg-blue-100 text-blue-600" : "bg-gray-100 text-gray-400"
-                    }`}>
+                    <div
+                      className={`p-2 rounded-lg ${
+                        rule.enabled
+                          ? "bg-blue-100 text-blue-600"
+                          : "bg-gray-100 text-gray-400"
+                      }`}
+                    >
                       {getIcon(rule.type)}
                     </div>
                     <div className="flex-1">
                       <h4 className="font-semibold">{rule.name}</h4>
                       <p className="text-sm text-gray-600 mt-1">
-                        {rule.type === "smart-categorize" && t("templates.automation.smartCategorizeDesc")}
-                        {rule.type === "budget-alert" && t("templates.automation.budgetAlertDesc")}
-                        {rule.type === "recurring" && t("templates.automation.recurringDesc")}
+                        {rule.type === "smart-categorize" &&
+                          t("templates.automation.smartCategorizeDesc")}
+                        {rule.type === "budget-alert" &&
+                          t("templates.automation.budgetAlertDesc")}
+                        {rule.type === "recurring" &&
+                          t("templates.automation.recurringDesc")}
                       </p>
-                      
+
                       {/* Configuration */}
                       {rule.enabled && (
                         <div className="mt-3 space-y-2">
                           {rule.type === "budget-alert" && (
                             <div>
-                              <Label className="text-xs">{t("templates.automation.threshold")}</Label>
+                              <Label className="text-xs">
+                                {t("templates.automation.threshold")}
+                              </Label>
                               <div className="flex items-center gap-2 mt-1">
                                 <Input
                                   type="number"
                                   min="50"
                                   max="100"
                                   value={rule.config.threshold}
-                                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                                    const updated = rules.map(r =>
+                                  onChange={(
+                                    e: React.ChangeEvent<HTMLInputElement>,
+                                  ) => {
+                                    const updated = rules.map((r) =>
                                       r.id === rule.id
-                                        ? { ...r, config: { ...r.config, threshold: parseInt(e.target.value) } }
-                                        : r
+                                        ? {
+                                            ...r,
+                                            config: {
+                                              ...r.config,
+                                              threshold: parseInt(
+                                                e.target.value,
+                                              ),
+                                            },
+                                          }
+                                        : r,
                                     );
                                     setRules(updated);
                                   }}
@@ -123,7 +154,9 @@ export function TemplateAutomation({ open, onOpenChange }: TemplateAutomationPro
                           )}
                           {rule.type === "smart-categorize" && (
                             <div>
-                              <Label className="text-xs">{t("templates.automation.confidence")}</Label>
+                              <Label className="text-xs">
+                                {t("templates.automation.confidence")}
+                              </Label>
                               <div className="flex items-center gap-2 mt-1">
                                 <Input
                                   type="number"
@@ -131,17 +164,29 @@ export function TemplateAutomation({ open, onOpenChange }: TemplateAutomationPro
                                   max="1"
                                   step="0.1"
                                   value={rule.config.confidence}
-                                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                                    const updated = rules.map(r =>
+                                  onChange={(
+                                    e: React.ChangeEvent<HTMLInputElement>,
+                                  ) => {
+                                    const updated = rules.map((r) =>
                                       r.id === rule.id
-                                        ? { ...r, config: { ...r.config, confidence: parseFloat(e.target.value) } }
-                                        : r
+                                        ? {
+                                            ...r,
+                                            config: {
+                                              ...r.config,
+                                              confidence: parseFloat(
+                                                e.target.value,
+                                              ),
+                                            },
+                                          }
+                                        : r,
                                     );
                                     setRules(updated);
                                   }}
                                   className="w-20"
                                 />
-                                <span className="text-sm text-gray-600">(0-1)</span>
+                                <span className="text-sm text-gray-600">
+                                  (0-1)
+                                </span>
                               </div>
                             </div>
                           )}

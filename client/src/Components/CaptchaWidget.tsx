@@ -7,7 +7,12 @@ interface CaptchaWidgetProps {
   onExpire?: () => void;
 }
 
-export function CaptchaWidget({ sitekey, onVerify, onError, onExpire }: CaptchaWidgetProps) {
+export function CaptchaWidget({
+  sitekey,
+  onVerify,
+  onError,
+  onExpire,
+}: CaptchaWidgetProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const widgetId = useRef<string | null>(null);
 

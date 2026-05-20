@@ -1,4 +1,10 @@
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./ui/select";
 import { TaxRate } from "../hooks/useBudgets";
 import { Card } from "./ui/card";
 import { useState, useEffect } from "react";
@@ -33,8 +39,14 @@ export function TaxSelector({
   return (
     <div className="space-y-4">
       <div>
-        <label className="text-sm font-medium text-gray-700 block mb-2">Country</label>
-        <Select value={selectedCountry} onValueChange={onCountryChange} disabled={loading}>
+        <label className="text-sm font-medium text-gray-700 block mb-2">
+          Country
+        </label>
+        <Select
+          value={selectedCountry}
+          onValueChange={onCountryChange}
+          disabled={loading}
+        >
           <SelectTrigger>
             <SelectValue />
           </SelectTrigger>
@@ -50,8 +62,12 @@ export function TaxSelector({
 
       {taxes.length > 0 && (
         <div className="space-y-3">
-          <label className="text-sm font-medium text-gray-700 block">Tax Type</label>
-          <div className={`grid ${isMobile ? "grid-cols-1" : "grid-cols-2"} gap-2`}>
+          <label className="text-sm font-medium text-gray-700 block">
+            Tax Type
+          </label>
+          <div
+            className={`grid ${isMobile ? "grid-cols-1" : "grid-cols-2"} gap-2`}
+          >
             {taxes.map((tax) => (
               <Card
                 key={tax.id}
@@ -64,10 +80,14 @@ export function TaxSelector({
               >
                 <div className="flex items-center justify-between">
                   <div className="flex-1">
-                    <p className="font-medium text-sm text-gray-900">{tax.taxType}</p>
+                    <p className="font-medium text-sm text-gray-900">
+                      {tax.taxType}
+                    </p>
                     <p className="text-xs text-gray-600">{tax.description}</p>
                   </div>
-                  <p className="text-lg font-bold text-gray-900 ml-2">{tax.percentage}%</p>
+                  <p className="text-lg font-bold text-gray-900 ml-2">
+                    {tax.percentage}%
+                  </p>
                 </div>
               </Card>
             ))}

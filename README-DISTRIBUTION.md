@@ -3,14 +3,17 @@
 This app is available on multiple platforms:
 
 ## Progressive Web App (PWA)
+
 The app is automatically available as a PWA when you visit the website. Users can install it on:
+
 - **Android**: Chrome menu > "Add to Home screen"
-- **iOS/iPadOS**: Safari > Share > "Add to Home Screen"  
+- **iOS/iPadOS**: Safari > Share > "Add to Home Screen"
 - **Windows**: Edge/Chrome > Install icon in address bar
 - **macOS**: Safari > File > "Add to Dock"
 - **Linux**: Chrome/Firefox > Menu > "Install"
 
 ### PWA Features
+
 - Offline support
 - App-like experience
 - Automatic updates
@@ -20,22 +23,26 @@ The app is automatically available as a PWA when you visit the website. Users ca
 ## Desktop Applications
 
 ### Windows
+
 1. **Portable Version (.exe)**: Download and run directly, no installation required
 2. **Installer Version (.exe)**: Full Windows installer with automatic updates
 
 ### macOS
+
 1. **DMG**: Drag and drop to Applications folder
 2. **ZIP**: Extract and move to Applications
 
 ### Linux
+
 1. **AppImage**: Universal Linux package, run anywhere
 2. **DEB**: For Debian/Ubuntu-based systems
-3. **RPM**: For Fedora/RHEL-based systems  
+3. **RPM**: For Fedora/RHEL-based systems
 4. **Snap**: Cross-distro package from Snap Store
 
 ## Mobile Applications
 
 ### Android
+
 1. **Google Play Store**: Search for "Budget Tracker" (coming soon)
 2. **APK Direct Download**: Available from the website
    - Enable "Unknown sources" in Android settings
@@ -43,22 +50,26 @@ The app is automatically available as a PWA when you visit the website. Users ca
 3. **F-Droid**: Open-source app store (coming soon)
 
 ### iOS/iPadOS
+
 1. **App Store**: Search for "Budget Tracker" (coming soon)
 2. **PWA**: Install via Safari as described above
 
 ## Building from Source
 
 ### Prerequisites
+
 ```bash
 npm install
 ```
 
 ### Build PWA
+
 ```bash
 npm run build
 ```
 
 ### Build Desktop Apps (Electron)
+
 ```bash
 # Install Electron dependencies
 npm install --save-dev electron electron-builder
@@ -73,6 +84,7 @@ npm run build:electron:linux
 ```
 
 ### Build Mobile Apps (Capacitor)
+
 ```bash
 # Install Capacitor
 npm install @capacitor/core @capacitor/cli
@@ -94,6 +106,7 @@ npx cap open ios
 ```
 
 ### APK Build Instructions
+
 1. Install Android Studio
 2. Open the android project: `npx cap open android`
 3. Build > Generate Signed Bundle / APK
@@ -102,7 +115,9 @@ npx cap open ios
 6. Build release APK
 
 ### F-Droid Submission
+
 To submit to F-Droid:
+
 1. Ensure the app is fully open source
 2. Remove any proprietary dependencies
 3. Submit metadata to F-Droid repository
@@ -111,12 +126,14 @@ To submit to F-Droid:
 ## Distribution Channels
 
 ### Official Website
+
 - PWA installation
 - Direct APK download
 - Desktop app downloads
 - Documentation and guides
 
 ### App Stores
+
 - Google Play Store (Android)
 - Apple App Store (iOS/iPadOS)
 - Microsoft Store (Windows)
@@ -125,13 +142,16 @@ To submit to F-Droid:
 - F-Droid (Android - open source)
 
 ### Direct Downloads
+
 All releases are available at:
+
 - GitHub Releases
 - Official website download page
 
 ## Platform-Specific Features
 
 ### PWA
+
 ✅ Offline functionality
 ✅ Push notifications
 ✅ Background sync
@@ -139,6 +159,7 @@ All releases are available at:
 ✅ App shortcuts
 
 ### Desktop (Electron)
+
 ✅ Native menus
 ✅ System tray integration
 ✅ Auto-update
@@ -146,6 +167,7 @@ All releases are available at:
 ✅ Native notifications
 
 ### Mobile (Capacitor)
+
 ✅ Native UI components
 ✅ Camera access
 ✅ Biometric authentication
@@ -153,15 +175,18 @@ All releases are available at:
 ✅ Deep linking
 
 ## Security & Privacy
+
 - All data stored locally by default
 - No tracking or analytics (optional)
 - End-to-end encryption for cloud sync (optional)
 - Open source codebase for transparency
 
 ## Support
+
 - GitHub Issues: Bug reports and feature requests
 - Documentation: Full user guide available
 - Community Forums: User discussion and support
 
 ## License
+
 MIT License - Free and open source

@@ -21,7 +21,7 @@ transactionsRouter.get(
       console.error("Error fetching transactions:", error);
       res.status(500).json({ error: "Failed to fetch transactions" });
     }
-  }
+  },
 );
 
 // Get transactions for a budget
@@ -41,7 +41,7 @@ transactionsRouter.get(
       console.error("Error fetching transactions:", error);
       res.status(500).json({ error: "Failed to fetch transactions" });
     }
-  }
+  },
 );
 
 // Create transaction
@@ -100,7 +100,7 @@ transactionsRouter.post(
       console.error("Error creating transaction:", error);
       res.status(500).json({ error: "Failed to create transaction" });
     }
-  }
+  },
 );
 
 // Delete transaction
@@ -136,11 +136,14 @@ transactionsRouter.delete(
           .execute();
       }
 
-      await db.deleteFrom("transactions").where("id", "=", req.params.id).execute();
+      await db
+        .deleteFrom("transactions")
+        .where("id", "=", req.params.id)
+        .execute();
       res.json({ success: true });
     } catch (error) {
       console.error("Error deleting transaction:", error);
       res.status(500).json({ error: "Failed to delete transaction" });
     }
-  }
+  },
 );

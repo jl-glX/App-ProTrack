@@ -26,11 +26,18 @@ interface TemplateEditorProps {
   onSave: (template: any) => void;
 }
 
-export function TemplateEditor({ open, onOpenChange, template, onSave }: TemplateEditorProps) {
+export function TemplateEditor({
+  open,
+  onOpenChange,
+  template,
+  onSave,
+}: TemplateEditorProps) {
   const { t } = useTranslation();
   const [name, setName] = useState(template?.name || "");
   const [description, setDescription] = useState(template?.description || "");
-  const [categories, setCategories] = useState<Category[]>(template?.categories || []);
+  const [categories, setCategories] = useState<Category[]>(
+    template?.categories || [],
+  );
   const [editingIndex, setEditingIndex] = useState<number | null>(null);
 
   const [newCategory, setNewCategory] = useState<Category>({
@@ -50,7 +57,12 @@ export function TemplateEditor({ open, onOpenChange, template, onSave }: Templat
       } else {
         setCategories([...categories, newCategory]);
       }
-      setNewCategory({ name: "", icon: "shopping-cart", color: "#3b82f6", percentage: 0 });
+      setNewCategory({
+        name: "",
+        icon: "shopping-cart",
+        color: "#3b82f6",
+        percentage: 0,
+      });
     }
   }
 
@@ -64,8 +76,11 @@ export function TemplateEditor({ open, onOpenChange, template, onSave }: Templat
   }
 
   function handleSave() {
-    const totalPercentage = categories.reduce((sum, cat) => sum + cat.percentage, 0);
-    
+    const totalPercentage = categories.reduce(
+      (sum, cat) => sum + cat.percentage,
+      0,
+    );
+
     if (totalPercentage !== 100) {
       alert(t("templates.editor.percentageError"));
       return;
@@ -81,33 +96,55 @@ export function TemplateEditor({ open, onOpenChange, template, onSave }: Templat
     onOpenChange(false);
   }
 
-  const totalPercentage = categories.reduce((sum, cat) => sum + cat.percentage, 0);
-  const icons = ["shopping-cart", "home", "car", "utensils", "music", "book", "heart", "zap", "briefcase", "piggy-bank"];
+  const totalPercentage = categories.reduce(
+    (sum, cat) => sum + cat.percentage,
+    0,
+  );
+  const icons = [
+    "shopping-cart",
+    "home",
+    "car",
+    "utensils",
+    "music",
+    "book",
+    "heart",
+    "zap",
+    "briefcase",
+    "piggy-bank",
+  ];
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold gradient-text">
-            {template?.id ? t("templates.editor.editTitle") : t("templates.editor.createTitle")}
+            {template?.id
+              ? t("templates.editor.editTitle")
+              : t("templates.editor.createTitle")}
           </DialogTitle>
         </DialogHeader>
 
         <div className="space-y-6">
           <div className="space-y-4">
             <div>
-              <Label htmlFor="template-name">{t("templates.editor.name")}</Label>
+              <Label htmlFor="template-name">
+                {t("templates.editor.name")}
+              </Label>
               <Input
                 id="template-name"
                 value={name}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                  setName(e.target.value)
+                }
                 placeholder={t("templates.editor.namePlaceholder")}
                 className="mt-1"
               />
             </div>
 
             <div>
-              <Label htmlFor="template-description">{t("templates.editor.description")}</Label>
+              <Label htmlFor="template-description">
+                {t("templates.editor.description")}
+              </Label>
               <textarea
                 id="template-description"
                 value={description}
@@ -119,15 +156,19 @@ export function TemplateEditor({ open, onOpenChange, template, onSave }: Templat
           </div>
 
           <div className="border-t pt-6">
-            <h3 className="text-lg font-semibold mb-4">{t("templates.editor.categories")}</h3>
-            
+            <h3 className="text-lg font-semibold mb-4">
+              {t("templates.editor.categories")}
+            </h3>
+
             <Card className="p-4 mb-4 bg-gray-50 card-hover-gradient">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <Label>{t("templates.editor.categoryName")}</Label>
                   <Input
                     value={newCategory.name}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewCategory({ ...newCategory, name: e.target.value })}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                      setNewCategory({ ...newCategory, name: e.target.value })
+                    }
                     placeholder={t("templates.editor.categoryNamePlaceholder")}
                   />
                 </div>
@@ -139,7 +180,12 @@ export function TemplateEditor({ open, onOpenChange, template, onSave }: Templat
                     min="0"
                     max="100"
                     value={newCategory.percentage || ""}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewCategory({ ...newCategory, percentage: parseFloat(e.target.value) || 0 })}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                      setNewCategory({
+                        ...newCategory,
+                        percentage: parseFloat(e.target.value) || 0,
+                      })
+                    }
                     placeholder="0"
                   />
                 </div>
@@ -148,7 +194,9 @@ export function TemplateEditor({ open, onOpenChange, template, onSave }: Templat
                   <Label>{t("templates.editor.icon")}</Label>
                   <select
                     value={newCategory.icon}
-                    onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setNewCategory({ ...newCategory, icon: e.target.value })}
+                    onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+                      setNewCategory({ ...newCategory, icon: e.target.value })
+                    }
                     className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                   >
                     {icons.map((icon) => (
@@ -165,13 +213,23 @@ export function TemplateEditor({ open, onOpenChange, template, onSave }: Templat
                     <Input
                       type="color"
                       value={newCategory.color}
-                      onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewCategory({ ...newCategory, color: e.target.value })}
+                      onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                        setNewCategory({
+                          ...newCategory,
+                          color: e.target.value,
+                        })
+                      }
                       className="w-20 h-10 p-1"
                     />
                     <Input
                       type="text"
                       value={newCategory.color}
-                      onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNewCategory({ ...newCategory, color: e.target.value })}
+                      onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                        setNewCategory({
+                          ...newCategory,
+                          color: e.target.value,
+                        })
+                      }
                       placeholder="#3b82f6"
                       className="flex-1"
                     />
@@ -179,7 +237,10 @@ export function TemplateEditor({ open, onOpenChange, template, onSave }: Templat
                 </div>
               </div>
 
-              <Button onClick={handleAddCategory} className="w-full mt-4 btn-ripple">
+              <Button
+                onClick={handleAddCategory}
+                className="w-full mt-4 btn-ripple"
+              >
                 {editingIndex !== null ? (
                   <>
                     <Save className="w-4 h-4 mr-2" />
@@ -196,7 +257,10 @@ export function TemplateEditor({ open, onOpenChange, template, onSave }: Templat
 
             <div className="space-y-2 mb-4">
               {categories.map((category, index) => (
-                <Card key={index} className="p-3 flex items-center justify-between hover-lift">
+                <Card
+                  key={index}
+                  className="p-3 flex items-center justify-between hover-lift"
+                >
                   <div className="flex items-center gap-3">
                     <div
                       className="w-8 h-8 rounded-full"
@@ -229,18 +293,29 @@ export function TemplateEditor({ open, onOpenChange, template, onSave }: Templat
               ))}
             </div>
 
-            <div className={`text-sm font-medium ${totalPercentage === 100 ? "text-green-600" : "text-red-600"}`}>
+            <div
+              className={`text-sm font-medium ${totalPercentage === 100 ? "text-green-600" : "text-red-600"}`}
+            >
               {t("templates.editor.total")}: {totalPercentage}%
-              {totalPercentage !== 100 && ` (${t("templates.editor.mustBe100")})`}
+              {totalPercentage !== 100 &&
+                ` (${t("templates.editor.mustBe100")})`}
             </div>
           </div>
 
           <div className="flex gap-2 border-t pt-4">
-            <Button onClick={handleSave} className="flex-1 btn-ripple" disabled={!name || totalPercentage !== 100}>
+            <Button
+              onClick={handleSave}
+              className="flex-1 btn-ripple"
+              disabled={!name || totalPercentage !== 100}
+            >
               <Save className="w-4 h-4 mr-2" />
               {t("templates.editor.save")}
             </Button>
-            <Button onClick={() => onOpenChange(false)} variant="outline" className="flex-1">
+            <Button
+              onClick={() => onOpenChange(false)}
+              variant="outline"
+              className="flex-1"
+            >
               {t("common.cancel")}
             </Button>
           </div>

@@ -36,11 +36,23 @@ const PRESET_CATEGORIES = [
 ];
 
 const COLOR_PALETTE = [
-  "#ef4444", "#f59e0b", "#10b981", "#3b82f6", "#8b5cf6",
-  "#ec4899", "#06b6d4", "#f472b6", "#a855f7", "#14b8a6"
+  "#ef4444",
+  "#f59e0b",
+  "#10b981",
+  "#3b82f6",
+  "#8b5cf6",
+  "#ec4899",
+  "#06b6d4",
+  "#f472b6",
+  "#a855f7",
+  "#14b8a6",
 ];
 
-export function TemplateWizard({ open, onOpenChange, onComplete }: TemplateWizardProps) {
+export function TemplateWizard({
+  open,
+  onOpenChange,
+  onComplete,
+}: TemplateWizardProps) {
   const { t } = useTranslation();
   const [currentStep, setCurrentStep] = useState(0);
   const [name, setName] = useState("");
@@ -59,10 +71,10 @@ export function TemplateWizard({ open, onOpenChange, onComplete }: TemplateWizar
     }
   }
 
-  function handleToggleCategory(preset: typeof PRESET_CATEGORIES[0]) {
-    const exists = categories.find(c => c.name === preset.name);
+  function handleToggleCategory(preset: (typeof PRESET_CATEGORIES)[0]) {
+    const exists = categories.find((c) => c.name === preset.name);
     if (exists) {
-      setCategories(categories.filter(c => c.name !== preset.name));
+      setCategories(categories.filter((c) => c.name !== preset.name));
     } else {
       setCategories([...categories, { ...preset, percentage: 0 }]);
     }
@@ -71,13 +83,13 @@ export function TemplateWizard({ open, onOpenChange, onComplete }: TemplateWizar
   function handleDistribute() {
     if (categories.length === 0) return;
     const equal = Math.floor(100 / categories.length);
-    const remainder = 100 - (equal * categories.length);
-    
+    const remainder = 100 - equal * categories.length;
+
     const distributed = categories.map((cat, i) => ({
       ...cat,
-      percentage: i === 0 ? equal + remainder : equal
+      percentage: i === 0 ? equal + remainder : equal,
     }));
-    
+
     setCategories(distributed);
   }
 
@@ -94,8 +106,11 @@ export function TemplateWizard({ open, onOpenChange, onComplete }: TemplateWizar
   }
 
   function handleComplete() {
-    const totalPercentage = categories.reduce((sum, cat) => sum + cat.percentage, 0);
-    
+    const totalPercentage = categories.reduce(
+      (sum, cat) => sum + cat.percentage,
+      0,
+    );
+
     if (totalPercentage !== 100) {
       alert(t("templates.editor.percentageError"));
       return;
@@ -107,7 +122,7 @@ export function TemplateWizard({ open, onOpenChange, onComplete }: TemplateWizar
       templateType: "custom",
       categories,
     });
-    
+
     // Reset wizard
     setCurrentStep(0);
     setName("");
@@ -116,7 +131,10 @@ export function TemplateWizard({ open, onOpenChange, onComplete }: TemplateWizar
     onOpenChange(false);
   }
 
-  const totalPercentage = categories.reduce((sum, cat) => sum + cat.percentage, 0);
+  const totalPercentage = categories.reduce(
+    (sum, cat) => sum + cat.percentage,
+    0,
+  );
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -132,15 +150,25 @@ export function TemplateWizard({ open, onOpenChange, onComplete }: TemplateWizar
         <div className="flex items-center justify-between mb-6">
           {WIZARD_STEPS.map((step, index) => (
             <div key={step} className="flex items-center flex-1">
-              <div className={`flex items-center justify-center w-8 h-8 rounded-full ${
-                index <= currentStep ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-500"
-              }`}>
-                {index < currentStep ? <Check className="w-4 h-4" /> : index + 1}
+              <div
+                className={`flex items-center justify-center w-8 h-8 rounded-full ${
+                  index <= currentStep
+                    ? "bg-blue-500 text-white"
+                    : "bg-gray-200 text-gray-500"
+                }`}
+              >
+                {index < currentStep ? (
+                  <Check className="w-4 h-4" />
+                ) : (
+                  index + 1
+                )}
               </div>
               {index < WIZARD_STEPS.length - 1 && (
-                <div className={`flex-1 h-1 mx-2 ${
-                  index < currentStep ? "bg-blue-500" : "bg-gray-200"
-                }`} />
+                <div
+                  className={`flex-1 h-1 mx-2 ${
+                    index < currentStep ? "bg-blue-500" : "bg-gray-200"
+                  }`}
+                />
               )}
             </div>
           ))}
@@ -151,23 +179,33 @@ export function TemplateWizard({ open, onOpenChange, onComplete }: TemplateWizar
           {/* Step 1: Basic Info */}
           {currentStep === 0 && (
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold">{t("templates.wizard.basicInfo")}</h3>
+              <h3 className="text-lg font-semibold">
+                {t("templates.wizard.basicInfo")}
+              </h3>
               <div>
-                <Label htmlFor="wizard-name">{t("templates.editor.name")}</Label>
-                  <Input
-                    id="wizard-name"
-                    value={name}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
-                    placeholder={t("templates.editor.namePlaceholder")}
-                    className="mt-1"
-                  />
+                <Label htmlFor="wizard-name">
+                  {t("templates.editor.name")}
+                </Label>
+                <Input
+                  id="wizard-name"
+                  value={name}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    setName(e.target.value)
+                  }
+                  placeholder={t("templates.editor.namePlaceholder")}
+                  className="mt-1"
+                />
               </div>
               <div>
-                <Label htmlFor="wizard-description">{t("templates.editor.description")}</Label>
+                <Label htmlFor="wizard-description">
+                  {t("templates.editor.description")}
+                </Label>
                 <textarea
                   id="wizard-description"
                   value={description}
-                  onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setDescription(e.target.value)}
+                  onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+                    setDescription(e.target.value)
+                  }
                   placeholder={t("templates.editor.descriptionPlaceholder")}
                   className="w-full min-h-[100px] px-3 py-2 border rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-primary mt-1 bg-white text-gray-900 placeholder:text-gray-400"
                 />
@@ -178,16 +216,24 @@ export function TemplateWizard({ open, onOpenChange, onComplete }: TemplateWizar
           {/* Step 2: Select Categories */}
           {currentStep === 1 && (
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold">{t("templates.wizard.selectCategories")}</h3>
-              <p className="text-sm text-gray-600">{t("templates.wizard.selectCategoriesDesc")}</p>
+              <h3 className="text-lg font-semibold">
+                {t("templates.wizard.selectCategories")}
+              </h3>
+              <p className="text-sm text-gray-600">
+                {t("templates.wizard.selectCategoriesDesc")}
+              </p>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                 {PRESET_CATEGORIES.map((preset) => {
-                  const isSelected = categories.some(c => c.name === preset.name);
+                  const isSelected = categories.some(
+                    (c) => c.name === preset.name,
+                  );
                   return (
                     <Card
                       key={preset.name}
                       className={`p-4 cursor-pointer transition-all ${
-                        isSelected ? "ring-2 ring-blue-500 bg-blue-50" : "hover:bg-gray-50"
+                        isSelected
+                          ? "ring-2 ring-blue-500 bg-blue-50"
+                          : "hover:bg-gray-50"
                       }`}
                       onClick={() => handleToggleCategory(preset)}
                     >
@@ -196,7 +242,9 @@ export function TemplateWizard({ open, onOpenChange, onComplete }: TemplateWizar
                           className="w-10 h-10 rounded-full flex items-center justify-center"
                           style={{ backgroundColor: preset.color }}
                         >
-                          {isSelected && <Check className="w-5 h-5 text-white" />}
+                          {isSelected && (
+                            <Check className="w-5 h-5 text-white" />
+                          )}
                         </div>
                         <span className="font-medium">{preset.name}</span>
                       </div>
@@ -214,13 +262,15 @@ export function TemplateWizard({ open, onOpenChange, onComplete }: TemplateWizar
           {currentStep === 2 && (
             <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <h3 className="text-lg font-semibold">{t("templates.wizard.customize")}</h3>
+                <h3 className="text-lg font-semibold">
+                  {t("templates.wizard.customize")}
+                </h3>
                 <Button onClick={handleDistribute} variant="outline" size="sm">
                   <Wand2 className="w-4 h-4 mr-2" />
                   {t("templates.wizard.autoDistribute")}
                 </Button>
               </div>
-              
+
               <div className="space-y-3">
                 {categories.map((category, index) => (
                   <Card key={index} className="p-4">
@@ -229,25 +279,36 @@ export function TemplateWizard({ open, onOpenChange, onComplete }: TemplateWizar
                         <Label className="text-sm">{category.name}</Label>
                       </div>
                       <div>
-                        <Label className="text-xs text-gray-600">{t("templates.editor.percentage")}</Label>
+                        <Label className="text-xs text-gray-600">
+                          {t("templates.editor.percentage")}
+                        </Label>
                         <Input
                           type="number"
                           min="0"
                           max="100"
                           value={category.percentage || ""}
-                          onChange={(e: React.ChangeEvent<HTMLInputElement>) => handlePercentageChange(index, parseFloat(e.target.value) || 0)}
+                          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                            handlePercentageChange(
+                              index,
+                              parseFloat(e.target.value) || 0,
+                            )
+                          }
                           className="mt-1"
                         />
                       </div>
                       <div>
-                        <Label className="text-xs text-gray-600">{t("templates.editor.color")}</Label>
+                        <Label className="text-xs text-gray-600">
+                          {t("templates.editor.color")}
+                        </Label>
                         <div className="flex gap-2 mt-1">
                           {COLOR_PALETTE.map((color) => (
                             <button
                               key={color}
                               type="button"
                               className={`w-8 h-8 rounded-full transition-transform ${
-                                category.color === color ? "ring-2 ring-offset-2 ring-blue-500 scale-110" : ""
+                                category.color === color
+                                  ? "ring-2 ring-offset-2 ring-blue-500 scale-110"
+                                  : ""
                               }`}
                               style={{ backgroundColor: color }}
                               onClick={() => handleColorChange(index, color)}
@@ -259,10 +320,13 @@ export function TemplateWizard({ open, onOpenChange, onComplete }: TemplateWizar
                   </Card>
                 ))}
               </div>
-              
-              <div className={`text-sm font-medium ${totalPercentage === 100 ? "text-green-600" : "text-red-600"}`}>
+
+              <div
+                className={`text-sm font-medium ${totalPercentage === 100 ? "text-green-600" : "text-red-600"}`}
+              >
                 {t("templates.editor.total")}: {totalPercentage}%
-                {totalPercentage !== 100 && ` (${t("templates.editor.mustBe100")})`}
+                {totalPercentage !== 100 &&
+                  ` (${t("templates.editor.mustBe100")})`}
               </div>
             </div>
           )}
@@ -270,17 +334,23 @@ export function TemplateWizard({ open, onOpenChange, onComplete }: TemplateWizar
           {/* Step 4: Review */}
           {currentStep === 3 && (
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold">{t("templates.wizard.review")}</h3>
-              
+              <h3 className="text-lg font-semibold">
+                {t("templates.wizard.review")}
+              </h3>
+
               <Card className="p-4 bg-gray-50">
                 <div className="space-y-2">
                   <div>
-                    <span className="text-sm font-semibold text-gray-600">{t("templates.editor.name")}:</span>
+                    <span className="text-sm font-semibold text-gray-600">
+                      {t("templates.editor.name")}:
+                    </span>
                     <p className="text-lg font-bold">{name}</p>
                   </div>
                   {description && (
                     <div>
-                      <span className="text-sm font-semibold text-gray-600">{t("templates.editor.description")}:</span>
+                      <span className="text-sm font-semibold text-gray-600">
+                        {t("templates.editor.description")}:
+                      </span>
                       <p className="text-gray-700">{description}</p>
                     </div>
                   )}
@@ -288,9 +358,14 @@ export function TemplateWizard({ open, onOpenChange, onComplete }: TemplateWizar
               </Card>
 
               <div className="space-y-2">
-                <h4 className="font-semibold">{t("common.categories")} ({categories.length})</h4>
+                <h4 className="font-semibold">
+                  {t("common.categories")} ({categories.length})
+                </h4>
                 {categories.map((category, index) => (
-                  <Card key={index} className="p-3 flex items-center justify-between">
+                  <Card
+                    key={index}
+                    className="p-3 flex items-center justify-between"
+                  >
                     <div className="flex items-center gap-3">
                       <div
                         className="w-8 h-8 rounded-full"
@@ -298,15 +373,21 @@ export function TemplateWizard({ open, onOpenChange, onComplete }: TemplateWizar
                       />
                       <span className="font-medium">{category.name}</span>
                     </div>
-                    <span className="text-lg font-bold text-gray-700">{category.percentage}%</span>
+                    <span className="text-lg font-bold text-gray-700">
+                      {category.percentage}%
+                    </span>
                   </Card>
                 ))}
               </div>
 
-              <div className={`p-3 rounded-lg ${
-                totalPercentage === 100 ? "bg-green-50 text-green-700" : "bg-red-50 text-red-700"
-              }`}>
-                {totalPercentage === 100 
+              <div
+                className={`p-3 rounded-lg ${
+                  totalPercentage === 100
+                    ? "bg-green-50 text-green-700"
+                    : "bg-red-50 text-red-700"
+                }`}
+              >
+                {totalPercentage === 100
                   ? t("templates.wizard.readyToCreate")
                   : t("templates.wizard.fixPercentages")}
               </div>
@@ -324,7 +405,7 @@ export function TemplateWizard({ open, onOpenChange, onComplete }: TemplateWizar
             <ChevronLeft className="w-4 h-4 mr-2" />
             {t("common.previous")}
           </Button>
-          
+
           {currentStep < WIZARD_STEPS.length - 1 ? (
             <Button
               onClick={handleNext}

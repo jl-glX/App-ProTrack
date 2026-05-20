@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react';
-import { Button } from './ui/button';
-import { Card } from './ui/card';
-import { X, Settings, Cookie } from 'lucide-react';
-import Cookies from 'js-cookie';
-import { useTranslation } from 'react-i18next';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from './ui/dialog';
-import { Switch } from './ui/switch';
-import { Label } from './ui/label';
+import { useState, useEffect } from "react";
+import { Button } from "./ui/button";
+import { Card } from "./ui/card";
+import { X, Settings, Cookie } from "lucide-react";
+import Cookies from "js-cookie";
+import { useTranslation } from "react-i18next";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "./ui/dialog";
+import { Switch } from "./ui/switch";
+import { Label } from "./ui/label";
 
 export function CookieConsent() {
   const { t } = useTranslation();
@@ -19,7 +19,7 @@ export function CookieConsent() {
   });
 
   useEffect(() => {
-    const consent = Cookies.get('cookie-consent');
+    const consent = Cookies.get("cookie-consent");
     if (!consent) {
       setShowBanner(true);
     } else {
@@ -38,7 +38,9 @@ export function CookieConsent() {
       functional: true,
       analytics: true,
     };
-    Cookies.set('cookie-consent', JSON.stringify(allAccepted), { expires: 365 });
+    Cookies.set("cookie-consent", JSON.stringify(allAccepted), {
+      expires: 365,
+    });
     setPreferences(allAccepted);
     setShowBanner(false);
   }
@@ -49,13 +51,17 @@ export function CookieConsent() {
       functional: false,
       analytics: false,
     };
-    Cookies.set('cookie-consent', JSON.stringify(necessaryOnly), { expires: 365 });
+    Cookies.set("cookie-consent", JSON.stringify(necessaryOnly), {
+      expires: 365,
+    });
     setPreferences(necessaryOnly);
     setShowBanner(false);
   }
 
   function savePreferences() {
-    Cookies.set('cookie-consent', JSON.stringify(preferences), { expires: 365 });
+    Cookies.set("cookie-consent", JSON.stringify(preferences), {
+      expires: 365,
+    });
     setShowBanner(false);
     setShowSettings(false);
   }
@@ -69,7 +75,7 @@ export function CookieConsent() {
           <div className="flex items-start justify-between mb-4">
             <div className="flex items-center gap-2">
               <Cookie className="w-5 h-5 text-primary" />
-              <h3 className="font-semibold text-lg">{t('cookies.title')}</h3>
+              <h3 className="font-semibold text-lg">{t("cookies.title")}</h3>
             </div>
             <button
               onClick={acceptNecessary}
@@ -79,17 +85,14 @@ export function CookieConsent() {
               <X className="w-5 h-5" />
             </button>
           </div>
-          
+
           <p className="text-sm text-gray-600 mb-4">
-            {t('cookies.description')}
+            {t("cookies.description")}
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-2">
-            <Button
-              onClick={acceptAll}
-              className="flex-1 btn-ripple"
-            >
-              {t('cookies.acceptAll')}
+            <Button onClick={acceptAll} className="flex-1 btn-ripple">
+              {t("cookies.acceptAll")}
             </Button>
             <Button
               onClick={() => setShowSettings(true)}
@@ -97,15 +100,15 @@ export function CookieConsent() {
               className="flex-1"
             >
               <Settings className="w-4 h-4 mr-2" />
-              {t('cookies.customize')}
+              {t("cookies.customize")}
             </Button>
           </div>
-          
+
           <button
             onClick={acceptNecessary}
             className="w-full text-xs text-gray-500 hover:text-gray-700 mt-2 underline"
           >
-            {t('cookies.onlyNecessary')}
+            {t("cookies.onlyNecessary")}
           </button>
         </Card>
       </div>
@@ -113,18 +116,18 @@ export function CookieConsent() {
       <Dialog open={showSettings} onOpenChange={setShowSettings}>
         <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
           <DialogHeader>
-            <DialogTitle>{t('cookies.settings')}</DialogTitle>
+            <DialogTitle>{t("cookies.settings")}</DialogTitle>
           </DialogHeader>
-          
+
           <div className="space-y-6">
             <div className="space-y-4">
               <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
                 <div className="flex-1">
                   <Label htmlFor="necessary" className="font-semibold">
-                    {t('cookies.necessary')}
+                    {t("cookies.necessary")}
                   </Label>
                   <p className="text-sm text-gray-600 mt-1">
-                    {t('cookies.necessaryDesc')}
+                    {t("cookies.necessaryDesc")}
                   </p>
                 </div>
                 <Switch
@@ -136,10 +139,10 @@ export function CookieConsent() {
               <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
                 <div className="flex-1">
                   <Label htmlFor="functional" className="font-semibold">
-                    {t('cookies.functional')}
+                    {t("cookies.functional")}
                   </Label>
                   <p className="text-sm text-gray-600 mt-1">
-                    {t('cookies.functionalDesc')}
+                    {t("cookies.functionalDesc")}
                   </p>
                 </div>
                 <Switch
@@ -153,10 +156,10 @@ export function CookieConsent() {
               <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
                 <div className="flex-1">
                   <Label htmlFor="analytics" className="font-semibold">
-                    {t('cookies.analytics')}
+                    {t("cookies.analytics")}
                   </Label>
                   <p className="text-sm text-gray-600 mt-1">
-                    {t('cookies.analyticsDesc')}
+                    {t("cookies.analyticsDesc")}
                   </p>
                 </div>
                 <Switch
@@ -170,14 +173,14 @@ export function CookieConsent() {
 
             <div className="flex gap-2">
               <Button onClick={savePreferences} className="flex-1 btn-ripple">
-                {t('cookies.save')}
+                {t("cookies.save")}
               </Button>
               <Button
                 onClick={() => setShowSettings(false)}
                 variant="outline"
                 className="flex-1"
               >
-                {t('common.cancel')}
+                {t("common.cancel")}
               </Button>
             </div>
           </div>

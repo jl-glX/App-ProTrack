@@ -4,7 +4,8 @@
 
 /* Custom animations */
 @keyframes blob {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0) scale(1);
   }
   33% {
@@ -125,28 +126,54 @@
 
 /* Modern animations and effects */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideIn {
-  from { transform: translateX(-100%); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .animate-fade-in {
@@ -179,7 +206,9 @@
 
 /* Smooth hover effects */
 .hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .hover-lift:hover {
@@ -194,7 +223,7 @@
 }
 
 .card-glow::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -2px;
   left: -2px;
@@ -220,7 +249,7 @@
 }
 
 .btn-ripple::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -229,7 +258,9 @@
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.5);
   transform: translate(-50%, -50%);
-  transition: width 0.6s, height 0.6s;
+  transition:
+    width 0.6s,
+    height 0.6s;
 }
 
 .btn-ripple:active::after {
@@ -275,7 +306,11 @@ html {
 }
 
 /* Transition for all interactive elements */
-button, a, input, select, textarea {
+button,
+a,
+input,
+select,
+textarea {
   transition: all 0.2s ease;
 }
 
@@ -284,11 +319,11 @@ button, a, input, select, textarea {
   .tablet-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .tablet-spacing {
     padding: 1.5rem;
   }
-  
+
   .tablet-text {
     font-size: 0.95rem;
   }
@@ -302,13 +337,18 @@ button, a, input, select, textarea {
 }
 
 .card-hover-gradient::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
   transition: left 0.5s ease;
 }
 
@@ -318,7 +358,8 @@ button, a, input, select, textarea {
 
 /* Bounce animation for notifications */
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -349,7 +390,8 @@ button, a, input, select, textarea {
 
 /* Pulsing dot for notifications */
 @keyframes pulse-dot {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
     transform: scale(1);
   }
@@ -376,9 +418,23 @@ button, a, input, select, textarea {
 
 /* Shake animation for errors */
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-  20%, 40%, 60%, 80% { transform: translateX(5px); }
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-5px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(5px);
+  }
 }
 
 .animate-shake {
@@ -401,7 +457,8 @@ button, a, input, select, textarea {
 .neon-border {
   position: relative;
   border: 2px solid transparent;
-  background: linear-gradient(white, white) padding-box,
+  background:
+    linear-gradient(white, white) padding-box,
     linear-gradient(135deg, #667eea, #764ba2) border-box;
   transition: all 0.3s ease;
 }
@@ -412,7 +469,8 @@ button, a, input, select, textarea {
 
 /* Particle background effect */
 @keyframes particle-float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0);
   }
   25% {
@@ -432,11 +490,15 @@ button, a, input, select, textarea {
 }
 
 .particle-bg::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: radial-gradient(circle, rgba(102, 126, 234, 0.1) 1px, transparent 1px);
+  background-image: radial-gradient(
+    circle,
+    rgba(102, 126, 234, 0.1) 1px,
+    transparent 1px
+  );
   background-size: 20px 20px;
   animation: particle-float 10s ease-in-out infinite;
 }
@@ -470,9 +532,15 @@ button, a, input, select, textarea {
 }
 
 @keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Button effects */
@@ -501,11 +569,11 @@ button, a, input, select, textarea {
     min-height: 44px;
     min-width: 44px;
   }
-  
+
   .tablet-padding {
     padding: 1.25rem;
   }
-  
+
   .tablet-font-size {
     font-size: 1rem;
   }
@@ -514,7 +582,7 @@ button, a, input, select, textarea {
   .tablet-grid-2 {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .tablet-grid-3 {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -538,13 +606,24 @@ button, a, input, select, textarea {
   animation: wave 1s ease-in-out infinite;
 }
 
-.loading-wave span:nth-child(1) { animation-delay: 0s; }
-.loading-wave span:nth-child(2) { animation-delay: 0.1s; }
-.loading-wave span:nth-child(3) { animation-delay: 0.2s; }
+.loading-wave span:nth-child(1) {
+  animation-delay: 0s;
+}
+.loading-wave span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.loading-wave span:nth-child(3) {
+  animation-delay: 0.2s;
+}
 
 @keyframes wave {
-  0%, 100% { transform: scaleY(0.5); }
-  50% { transform: scaleY(1); }
+  0%,
+  100% {
+    transform: scaleY(0.5);
+  }
+  50% {
+    transform: scaleY(1);
+  }
 }
 
 /* Enhanced card interactions */
@@ -586,7 +665,9 @@ button, a, input, select, textarea {
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s, transform 0.3s;
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
 }
 
 .tooltip-modern:hover::after {
@@ -612,7 +693,7 @@ button, a, input, select, textarea {
     background: white;
     border: 2px solid black;
   }
-  
+
   .dark .glass,
   .dark .glass-modern {
     background: black;

@@ -7,6 +7,7 @@
 This project and all its components, including but not limited to source code, documentation, design, graphics, user interface, and functionality, are the exclusive intellectual property of the project owner.
 
 ### Owner Information
+
 - **Project Owner**: Javier López Díaz
 - **Project Name**: Budget Management Application
 - **Year of Creation**: 2024

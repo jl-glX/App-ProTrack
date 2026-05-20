@@ -20,7 +20,7 @@ categoriesRouter.get(
       console.error("Error fetching categories:", error);
       res.status(500).json({ error: "Failed to fetch categories" });
     }
-  }
+  },
 );
 
 // Create category
@@ -28,8 +28,13 @@ categoriesRouter.post(
   "/",
   async (req: express.Request, res: express.Response) => {
     try {
-      const { budgetId, name, limit, color = "#3b82f6", icon = "folder" } =
-        req.body;
+      const {
+        budgetId,
+        name,
+        limit,
+        color = "#3b82f6",
+        icon = "folder",
+      } = req.body;
 
       if (!budgetId || !name || limit === undefined) {
         res.status(400).json({ error: "Missing required fields" });
@@ -64,7 +69,7 @@ categoriesRouter.post(
       console.error("Error creating category:", error);
       res.status(500).json({ error: "Failed to create category" });
     }
-  }
+  },
 );
 
 // Update category
@@ -96,7 +101,7 @@ categoriesRouter.put(
       console.error("Error updating category:", error);
       res.status(500).json({ error: "Failed to update category" });
     }
-  }
+  },
 );
 
 // Delete category
@@ -104,11 +109,14 @@ categoriesRouter.delete(
   "/:id",
   async (req: express.Request, res: express.Response) => {
     try {
-      await db.deleteFrom("categories").where("id", "=", req.params.id).execute();
+      await db
+        .deleteFrom("categories")
+        .where("id", "=", req.params.id)
+        .execute();
       res.json({ success: true });
     } catch (error) {
       console.error("Error deleting category:", error);
       res.status(500).json({ error: "Failed to delete category" });
     }
-  }
+  },
 );

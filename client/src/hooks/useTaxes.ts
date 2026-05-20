@@ -26,11 +26,15 @@ export function useTaxes() {
 
   const getTaxesByCountry = async (country: string): Promise<TaxRate[]> => {
     if (!country || country.trim() === "") {
-      console.log("getTaxesByCountry called with empty country, returning empty array");
+      console.log(
+        "getTaxesByCountry called with empty country, returning empty array",
+      );
       return [];
     }
     try {
-      const response = await fetch(`/api/taxes/country/${encodeURIComponent(country)}`);
+      const response = await fetch(
+        `/api/taxes/country/${encodeURIComponent(country)}`,
+      );
       if (!response.ok) throw new Error("Failed to fetch taxes");
       return await response.json();
     } catch (err) {

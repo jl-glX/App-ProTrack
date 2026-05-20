@@ -1,27 +1,28 @@
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from './ui/select';
+} from "./ui/select";
 
 export function LanguageSelector() {
   const { i18n } = useTranslation();
 
   const languages = [
-    { code: 'en', name: 'English', flag: '🇬🇧' },
-    { code: 'es', name: 'Español', flag: '🇪🇸' },
-    { code: 'fr', name: 'Français', flag: '🇫🇷' },
-    { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
+    { code: "en", name: "English", flag: "🇬🇧" },
+    { code: "es", name: "Español", flag: "🇪🇸" },
+    { code: "fr", name: "Français", flag: "🇫🇷" },
+    { code: "de", name: "Deutsch", flag: "🇩🇪" },
   ];
 
   const handleLanguageChange = (code: string) => {
     i18n.changeLanguage(code);
   };
 
-  const currentLang = languages.find(l => l.code === i18n.language) || languages[0];
+  const currentLang =
+    languages.find((l) => l.code === i18n.language) || languages[0];
 
   return (
     <Select value={i18n.language} onValueChange={handleLanguageChange}>

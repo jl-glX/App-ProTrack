@@ -8,7 +8,8 @@ interface CategoryProgressProps {
 
 export function CategoryProgress({ category }: CategoryProgressProps) {
   const { t } = useTranslation();
-  const percentage = category.limit > 0 ? (category.spent / category.limit) * 100 : 0;
+  const percentage =
+    category.limit > 0 ? (category.spent / category.limit) * 100 : 0;
   const isOverBudget = category.spent > category.limit;
 
   return (
@@ -31,7 +32,8 @@ export function CategoryProgress({ category }: CategoryProgressProps) {
       <Progress value={Math.min(percentage, 100)} className="h-2" />
       {isOverBudget && (
         <p className="text-xs text-red-600">
-          {t('budget.overBudgetBy')} ${(category.spent - category.limit).toFixed(2)}
+          {t("budget.overBudgetBy")} $
+          {(category.spent - category.limit).toFixed(2)}
         </p>
       )}
     </div>

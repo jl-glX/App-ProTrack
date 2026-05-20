@@ -2,7 +2,14 @@ import { useState, useRef } from "react";
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { Progress } from "./ui/progress";
-import { Download, CheckCircle, AlertCircle, RefreshCw, Pause, Play } from "lucide-react";
+import {
+  Download,
+  CheckCircle,
+  AlertCircle,
+  RefreshCw,
+  Pause,
+  Play,
+} from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 interface DownloadManagerProps {
@@ -11,7 +18,11 @@ interface DownloadManagerProps {
   onComplete?: () => void;
 }
 
-export function DownloadManager({ platform, filename, onComplete }: DownloadManagerProps) {
+export function DownloadManager({
+  platform,
+  filename,
+  onComplete,
+}: DownloadManagerProps) {
   const { t } = useTranslation();
   const [downloading, setDownloading] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -41,14 +52,14 @@ export function DownloadManager({ platform, filename, onComplete }: DownloadMana
       const response = await fetch(`/api/downloads/file/${platform}`, {
         signal: abortController.current.signal,
       });
-      
+
       if (!response.ok) {
         throw new Error(t("downloads.error"));
       }
 
       const contentLength = response.headers.get("content-length");
       const total = parseInt(contentLength || "0", 10);
-      
+
       if (!response.body) {
         throw new Error(t("downloads.error"));
       }
@@ -59,12 +70,12 @@ export function DownloadManager({ platform, filename, onComplete }: DownloadMana
 
       while (true) {
         const { done, value } = await reader.read();
-        
+
         if (done) break;
-        
+
         chunks.push(value);
         receivedLength += value.length;
-        
+
         if (total) {
           const progressValue = (receivedLength / total) * 100;
           setProgress(progressValue);
@@ -85,18 +96,18 @@ export function DownloadManager({ platform, filename, onComplete }: DownloadMana
       setCompleted(true);
       setProgress(100);
       setRetryCount(0);
-      
+
       if (onComplete) {
         onComplete();
       }
     } catch (err: any) {
-      if (err.name === 'AbortError') {
+      if (err.name === "AbortError") {
         console.log("Download paused");
         return;
       }
-      
+
       console.error("Download error:", err);
-      
+
       // Retry logic with exponential backoff
       if (retryCount < 3) {
         const delay = Math.pow(2, retryCount) * 1000;
@@ -106,7 +117,7 @@ export function DownloadManager({ platform, filename, onComplete }: DownloadMana
         }, delay);
         return;
       }
-      
+
       setError(t("downloads.error"));
     } finally {
       setDownloading(false);
@@ -179,21 +190,21 @@ export function DownloadManager({ platform, filename, onComplete }: DownloadMana
             {t("downloads.start")}
           </Button>
         )}
-        
+
         {downloading && (
           <Button onClick={handlePause} variant="outline" className="flex-1">
             <Pause className="w-4 h-4 mr-2" />
             {t("downloads.pause")}
           </Button>
         )}
-        
+
         {paused && (
           <Button onClick={handleResume} className="flex-1">
             <Play className="w-4 h-4 mr-2" />
             {t("downloads.resume")}
           </Button>
         )}
-        
+
         {error && (
           <Button onClick={handleRetry} variant="outline" className="flex-1">
             <RefreshCw className="w-4 h-4 mr-2" />

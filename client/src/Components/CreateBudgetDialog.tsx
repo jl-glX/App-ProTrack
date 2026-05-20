@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "./ui/dialog";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
@@ -9,7 +15,9 @@ import { useTranslation } from "react-i18next";
 import { CurrencySelector } from "./CurrencySelector";
 
 interface CreateBudgetDialogProps {
-  onCreate: (budget: Omit<Budget, "id" | "createdAt" | "updatedAt">) => Promise<void>;
+  onCreate: (
+    budget: Omit<Budget, "id" | "createdAt" | "updatedAt">,
+  ) => Promise<void>;
 }
 
 export function CreateBudgetDialog({ onCreate }: CreateBudgetDialogProps) {
@@ -72,7 +80,9 @@ export function CreateBudgetDialog({ onCreate }: CreateBudgetDialogProps) {
             <Input
               id="name"
               value={formData.name}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFormData({ ...formData, name: e.target.value })}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setFormData({ ...formData, name: e.target.value })
+              }
               placeholder="e.g., Monthly Budget"
               required
             />
@@ -82,7 +92,9 @@ export function CreateBudgetDialog({ onCreate }: CreateBudgetDialogProps) {
             <Input
               id="description"
               value={formData.description}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFormData({ ...formData, description: e.target.value })}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setFormData({ ...formData, description: e.target.value })
+              }
               placeholder={t("forms.optional")}
             />
           </div>
@@ -93,7 +105,9 @@ export function CreateBudgetDialog({ onCreate }: CreateBudgetDialogProps) {
               type="number"
               step="0.01"
               value={formData.totalAmount}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFormData({ ...formData, totalAmount: e.target.value })}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setFormData({ ...formData, totalAmount: e.target.value })
+              }
               placeholder="0.00"
               required
             />

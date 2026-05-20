@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "./ui/dialog";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
@@ -9,13 +15,25 @@ import { useTranslation } from "react-i18next";
 
 interface CreateCategoryDialogProps {
   budgetId: string;
-  onCreate: (category: Omit<Category, "id" | "createdAt" | "spent">) => Promise<void>;
+  onCreate: (
+    category: Omit<Category, "id" | "createdAt" | "spent">,
+  ) => Promise<void>;
 }
 
-const COLORS = ["#3b82f6", "#ef4444", "#10b981", "#f59e0b", "#8b5cf6", "#ec4899"];
+const COLORS = [
+  "#3b82f6",
+  "#ef4444",
+  "#10b981",
+  "#f59e0b",
+  "#8b5cf6",
+  "#ec4899",
+];
 const ICONS = ["wallet", "shopping", "fork", "home", "heart", "book"];
 
-export function CreateCategoryDialog({ budgetId, onCreate }: CreateCategoryDialogProps) {
+export function CreateCategoryDialog({
+  budgetId,
+  onCreate,
+}: CreateCategoryDialogProps) {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -62,7 +80,9 @@ export function CreateCategoryDialog({ budgetId, onCreate }: CreateCategoryDialo
             <Input
               id="cat-name"
               value={formData.name}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFormData({ ...formData, name: e.target.value })}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setFormData({ ...formData, name: e.target.value })
+              }
               placeholder="e.g., Groceries"
               required
             />
@@ -74,7 +94,9 @@ export function CreateCategoryDialog({ budgetId, onCreate }: CreateCategoryDialo
               type="number"
               step="0.01"
               value={formData.limit}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFormData({ ...formData, limit: e.target.value })}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setFormData({ ...formData, limit: e.target.value })
+              }
               placeholder="0.00"
               required
             />
@@ -88,7 +110,9 @@ export function CreateCategoryDialog({ budgetId, onCreate }: CreateCategoryDialo
                     key={color}
                     type="button"
                     className={`w-8 h-8 rounded-full border-2 ${
-                      formData.color === color ? "border-gray-800" : "border-gray-300"
+                      formData.color === color
+                        ? "border-gray-800"
+                        : "border-gray-300"
                     }`}
                     style={{ backgroundColor: color }}
                     onClick={() => setFormData({ ...formData, color })}
@@ -100,7 +124,9 @@ export function CreateCategoryDialog({ budgetId, onCreate }: CreateCategoryDialo
               <Label>{t("forms.icon")}</Label>
               <Input
                 value={formData.icon}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFormData({ ...formData, icon: e.target.value })}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                  setFormData({ ...formData, icon: e.target.value })
+                }
                 placeholder="e.g., wallet"
               />
             </div>

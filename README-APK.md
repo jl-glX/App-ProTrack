@@ -18,6 +18,7 @@ npm run build:android
 ```
 
 This will:
+
 1. Build the web application
 2. Sync with Capacitor
 3. Build the Android APK
@@ -28,21 +29,25 @@ This will:
 If you prefer to build manually:
 
 ### 1. Build the Web App
+
 ```bash
 npm run build:pwa
 ```
 
 ### 2. Sync with Capacitor
+
 ```bash
 npx cap sync android
 ```
 
 ### 3. Add Android Platform (first time only)
+
 ```bash
 npx cap add android
 ```
 
 ### 4. Build the APK
+
 ```bash
 cd android
 ./gradlew assembleRelease
@@ -50,7 +55,9 @@ cd ..
 ```
 
 ### 5. Find the APK
+
 The APK will be located at:
+
 ```
 android/app/build/outputs/apk/release/app-release-unsigned.apk
 ```
@@ -60,6 +67,7 @@ android/app/build/outputs/apk/release/app-release-unsigned.apk
 To distribute the APK, you should sign it:
 
 ### 1. Generate a Keystore (first time only)
+
 ```bash
 keytool -genkey -v -keystore android/release.keystore -alias budget-tracker -keyalg RSA -keysize 2048 -validity 10000
 ```
@@ -67,6 +75,7 @@ keytool -genkey -v -keystore android/release.keystore -alias budget-tracker -key
 ### 2. Configure Signing
 
 Create `android/keystore.properties`:
+
 ```properties
 storePassword=YOUR_STORE_PASSWORD
 keyPassword=YOUR_KEY_PASSWORD
@@ -77,6 +86,7 @@ storeFile=release.keystore
 ### 3. Update build.gradle
 
 Add to `android/app/build.gradle`:
+
 ```gradle
 android {
     signingConfigs {
@@ -96,6 +106,7 @@ android {
 ```
 
 ### 4. Build Signed APK
+
 ```bash
 cd android
 ./gradlew assembleRelease
@@ -104,6 +115,7 @@ cd android
 ## Installing the APK
 
 ### On Device
+
 1. Transfer `BudgetTracker.apk` to your Android device
 2. Open Settings > Security
 3. Enable "Unknown Sources" or "Install unknown apps"
@@ -111,6 +123,7 @@ cd android
 5. Tap "Install"
 
 ### Via ADB
+
 ```bash
 adb install dist-electron/BudgetTracker.apk
 ```
@@ -118,6 +131,7 @@ adb install dist-electron/BudgetTracker.apk
 ## Testing
 
 To test the app in Android Studio:
+
 ```bash
 npm run cap:android
 ```
@@ -127,6 +141,7 @@ This opens the Android project in Android Studio where you can run on emulators 
 ## Downloading from the App
 
 Users can download the APK directly from the Downloads page in the app:
+
 1. Navigate to Downloads page
 2. Click "Download APK" under Android section
 3. The APK will be downloaded to their device
@@ -142,16 +157,19 @@ Users can download the APK directly from the Downloads page in the app:
 ## Troubleshooting
 
 ### Gradle Build Fails
+
 - Ensure JDK 17 is installed and JAVA_HOME is set
 - Check Android SDK is properly installed
 - Run `./gradlew clean` in the android directory
 
 ### APK Not Installing
+
 - Enable "Unknown Sources" in device settings
 - Check minimum Android version (API 22 / Android 5.1+)
 - Ensure previous version is uninstalled
 
 ### App Crashes on Launch
+
 - Check Android Studio Logcat for errors
 - Verify all Capacitor plugins are synced
 - Rebuild with `npm run build:android`
@@ -159,6 +177,7 @@ Users can download the APK directly from the Downloads page in the app:
 ## Production Deployment
 
 For production:
+
 1. Always use signed APKs
 2. Test on multiple Android versions
 3. Consider publishing to Google Play Store
@@ -167,6 +186,7 @@ For production:
 ## Support
 
 For issues, check:
+
 - Capacitor docs: https://capacitorjs.com/
 - Android developer guide: https://developer.android.com/
 - Project issues: GitHub repository

@@ -8,7 +8,11 @@ interface TemplateSelectorProps {
   onSelect: (templateId: string) => void;
 }
 
-export function TemplateSelector({ templates, selectedId, onSelect }: TemplateSelectorProps) {
+export function TemplateSelector({
+  templates,
+  selectedId,
+  onSelect,
+}: TemplateSelectorProps) {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
@@ -18,7 +22,9 @@ export function TemplateSelector({ templates, selectedId, onSelect }: TemplateSe
   }, []);
 
   return (
-    <div className={`grid ${isMobile ? "grid-cols-1" : "grid-cols-1 md:grid-cols-2"} gap-4`}>
+    <div
+      className={`grid ${isMobile ? "grid-cols-1" : "grid-cols-1 md:grid-cols-2"} gap-4`}
+    >
       {templates.map((template) => (
         <Card
           key={template.id}
@@ -41,7 +47,9 @@ export function TemplateSelector({ templates, selectedId, onSelect }: TemplateSe
               </span>
             ))}
             {template.categories.length > 3 && (
-              <span className="text-xs text-gray-500">+{template.categories.length - 3} more</span>
+              <span className="text-xs text-gray-500">
+                +{template.categories.length - 3} more
+              </span>
             )}
           </div>
         </Card>

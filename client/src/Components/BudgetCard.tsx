@@ -14,7 +14,8 @@ interface BudgetCardProps {
 export function BudgetCard({ budget, categories, onDelete }: BudgetCardProps) {
   const { t } = useTranslation();
   const spent = categories.reduce((sum, cat) => sum + cat.spent, 0);
-  const percentage = budget.totalAmount > 0 ? (spent / budget.totalAmount) * 100 : 0;
+  const percentage =
+    budget.totalAmount > 0 ? (spent / budget.totalAmount) * 100 : 0;
 
   return (
     <Card className="p-6">
@@ -44,7 +45,11 @@ export function BudgetCard({ budget, categories, onDelete }: BudgetCardProps) {
           <div className="w-full bg-gray-200 rounded-full h-3">
             <div
               className={`h-3 rounded-full transition-all ${
-                percentage > 90 ? "bg-red-500" : percentage > 75 ? "bg-yellow-500" : "bg-green-500"
+                percentage > 90
+                  ? "bg-red-500"
+                  : percentage > 75
+                    ? "bg-yellow-500"
+                    : "bg-green-500"
               }`}
               style={{ width: `${Math.min(percentage, 100)}%` }}
             ></div>

@@ -16,42 +16,53 @@ budgetsRouter.get("/", async (_req: express.Request, res: express.Response) => {
 });
 
 // Get single budget with categories and transactions
-budgetsRouter.get("/:id", async (req: express.Request, res: express.Response) => {
-  try {
-    const budget = await db
-      .selectFrom("budgets")
-      .selectAll()
-      .where("id", "=", req.params.id)
-      .executeTakeFirst();
+budgetsRouter.get(
+  "/:id",
+  async (req: express.Request, res: express.Response) => {
+    try {
+      const budget = await db
+        .selectFrom("budgets")
+        .selectAll()
+        .where("id", "=", req.params.id)
+        .executeTakeFirst();
 
-    if (!budget) {
-      res.status(404).json({ error: "Budget not found" });
-      return;
+      if (!budget) {
+        res.status(404).json({ error: "Budget not found" });
+        return;
+      }
+
+      const categories = await db
+        .selectFrom("categories")
+        .selectAll()
+        .where("budgetId", "=", req.params.id)
+        .execute();
+
+      const transactions = await db
+        .selectFrom("transactions")
+        .selectAll()
+        .where("budgetId", "=", req.params.id)
+        .execute();
+
+      res.json({ budget, categories, transactions });
+    } catch (error) {
+      console.error("Error fetching budget:", error);
+      res.status(500).json({ error: "Failed to fetch budget" });
     }
-
-    const categories = await db
-      .selectFrom("categories")
-      .selectAll()
-      .where("budgetId", "=", req.params.id)
-      .execute();
-
-    const transactions = await db
-      .selectFrom("transactions")
-      .selectAll()
-      .where("budgetId", "=", req.params.id)
-      .execute();
-
-    res.json({ budget, categories, transactions });
-  } catch (error) {
-    console.error("Error fetching budget:", error);
-    res.status(500).json({ error: "Failed to fetch budget" });
-  }
-});
+  },
+);
 
 // Create budget
 budgetsRouter.post("/", async (req: express.Request, res: express.Response) => {
   try {
-    const { name, description, totalAmount, currency = "USD", country = "US", templateId, taxPercentage = 0 } = req.body;
+    const {
+      name,
+      description,
+      totalAmount,
+      currency = "USD",
+      country = "US",
+      templateId,
+      taxPercentage = 0,
+    } = req.body;
 
     if (!name || !totalAmount) {
       res.status(400).json({ error: "Missing required fields" });
@@ -94,43 +105,49 @@ budgetsRouter.post("/", async (req: express.Request, res: express.Response) => {
 });
 
 // Update budget
-budgetsRouter.put("/:id", async (req: express.Request, res: express.Response) => {
-  try {
-    const { name, description, totalAmount, currency } = req.body;
-    const now = new Date().toISOString();
+budgetsRouter.put(
+  "/:id",
+  async (req: express.Request, res: express.Response) => {
+    try {
+      const { name, description, totalAmount, currency } = req.body;
+      const now = new Date().toISOString();
 
-    await db
-      .updateTable("budgets")
-      .set({
-        name,
-        description,
-        totalAmount,
-        currency,
-        updatedAt: now,
-      })
-      .where("id", "=", req.params.id)
-      .execute();
+      await db
+        .updateTable("budgets")
+        .set({
+          name,
+          description,
+          totalAmount,
+          currency,
+          updatedAt: now,
+        })
+        .where("id", "=", req.params.id)
+        .execute();
 
-    const budget = await db
-      .selectFrom("budgets")
-      .selectAll()
-      .where("id", "=", req.params.id)
-      .executeTakeFirst();
+      const budget = await db
+        .selectFrom("budgets")
+        .selectAll()
+        .where("id", "=", req.params.id)
+        .executeTakeFirst();
 
-    res.json(budget);
-  } catch (error) {
-    console.error("Error updating budget:", error);
-    res.status(500).json({ error: "Failed to update budget" });
-  }
-});
+      res.json(budget);
+    } catch (error) {
+      console.error("Error updating budget:", error);
+      res.status(500).json({ error: "Failed to update budget" });
+    }
+  },
+);
 
 // Delete budget
-budgetsRouter.delete("/:id", async (req: express.Request, res: express.Response) => {
-  try {
-    await db.deleteFrom("budgets").where("id", "=", req.params.id).execute();
-    res.json({ success: true });
-  } catch (error) {
-    console.error("Error deleting budget:", error);
-    res.status(500).json({ error: "Failed to delete budget" });
-  }
-});
+budgetsRouter.delete(
+  "/:id",
+  async (req: express.Request, res: express.Response) => {
+    try {
+      await db.deleteFrom("budgets").where("id", "=", req.params.id).execute();
+      res.json({ success: true });
+    } catch (error) {
+      console.error("Error deleting budget:", error);
+      res.status(500).json({ error: "Failed to delete budget" });
+    }
+  },
+);

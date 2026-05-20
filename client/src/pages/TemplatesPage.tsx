@@ -12,7 +12,8 @@ import { useTranslation } from "react-i18next";
 export function TemplatesPage() {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { templates, loading, createTemplate, updateTemplate, deleteTemplate } = useTemplates();
+  const { templates, loading, createTemplate, updateTemplate, deleteTemplate } =
+    useTemplates();
   const [editorOpen, setEditorOpen] = useState(false);
   const [wizardOpen, setWizardOpen] = useState(false);
   const [automationOpen, setAutomationOpen] = useState(false);
@@ -72,8 +73,8 @@ export function TemplatesPage() {
     <div className="min-h-screen bg-gray-50 py-8 particle-bg">
       <div className="max-w-6xl mx-auto px-4 tablet-padding">
         <div className="mb-8">
-          <Button 
-            onClick={() => navigate("/")} 
+          <Button
+            onClick={() => navigate("/")}
             variant="outline"
             className="mb-6 gap-2 hover:bg-gray-100 border-2"
             size="lg"
@@ -81,18 +82,29 @@ export function TemplatesPage() {
             <ArrowLeft className="w-5 h-5" />
             {t("common.back")}
           </Button>
-          
+
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div>
-              <h1 className="text-3xl font-bold text-gradient-animate responsive-heading">{t("templates.page.title")}</h1>
-              <p className="text-gray-600 mt-1 responsive-text">{t("template.description")}</p>
+              <h1 className="text-3xl font-bold text-gradient-animate responsive-heading">
+                {t("templates.page.title")}
+              </h1>
+              <p className="text-gray-600 mt-1 responsive-text">
+                {t("template.description")}
+              </p>
             </div>
             <div className="flex gap-2">
-              <Button onClick={handleWizard} className="gap-2 btn-ripple btn-glow bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700">
+              <Button
+                onClick={handleWizard}
+                className="gap-2 btn-ripple btn-glow bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+              >
                 <Wand2 className="w-4 h-4" />
                 {t("templates.wizard.title")}
               </Button>
-              <Button onClick={handleCreate} variant="outline" className="gap-2 btn-ripple">
+              <Button
+                onClick={handleCreate}
+                variant="outline"
+                className="gap-2 btn-ripple"
+              >
                 <Plus className="w-4 h-4" />
                 {t("templates.advanced.title")}
               </Button>
@@ -114,8 +126,12 @@ export function TemplatesPage() {
             {templates.length === 0 ? (
               <Card className="p-12 text-center">
                 <Wand2 className="w-16 h-16 mx-auto text-gray-300 mb-4" />
-                <h3 className="text-xl font-semibold mb-2">{t("templates.page.noTemplates")}</h3>
-                <p className="text-gray-600 mb-6">{t("templates.page.noTemplatesDesc")}</p>
+                <h3 className="text-xl font-semibold mb-2">
+                  {t("templates.page.noTemplates")}
+                </h3>
+                <p className="text-gray-600 mb-6">
+                  {t("templates.page.noTemplatesDesc")}
+                </p>
                 <Button onClick={handleWizard} className="gap-2">
                   <Wand2 className="w-4 h-4" />
                   {t("templates.wizard.title")}
@@ -124,18 +140,25 @@ export function TemplatesPage() {
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 tablet-grid-2">
                 {templates.map((template) => (
-                  <Card key={template.id} className="p-6 hover-lift card-hover-gradient neon-border card-interactive tablet-touch-target group">
+                  <Card
+                    key={template.id}
+                    className="p-6 hover-lift card-hover-gradient neon-border card-interactive tablet-touch-target group"
+                  >
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-1">
-                          <h3 className="font-semibold text-lg">{template.name}</h3>
+                          <h3 className="font-semibold text-lg">
+                            {template.name}
+                          </h3>
                           {!template.isEditable && (
                             <span className="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">
                               {t("templates.preset")}
                             </span>
                           )}
                         </div>
-                        <p className="text-sm text-gray-600">{template.description}</p>
+                        <p className="text-sm text-gray-600">
+                          {template.description}
+                        </p>
                       </div>
                     </div>
 
@@ -143,21 +166,29 @@ export function TemplatesPage() {
                       <p className="text-xs font-semibold text-gray-700 uppercase">
                         {t("common.categories")}
                       </p>
-                      {template.categories.slice(0, 4).map((category: any, index: number) => (
-                        <div key={index} className="flex items-center justify-between text-sm">
-                          <div className="flex items-center gap-2">
-                            <div
-                              className="w-3 h-3 rounded-full"
-                              style={{ backgroundColor: category.color }}
-                            />
-                            <span>{category.name}</span>
+                      {template.categories
+                        .slice(0, 4)
+                        .map((category: any, index: number) => (
+                          <div
+                            key={index}
+                            className="flex items-center justify-between text-sm"
+                          >
+                            <div className="flex items-center gap-2">
+                              <div
+                                className="w-3 h-3 rounded-full"
+                                style={{ backgroundColor: category.color }}
+                              />
+                              <span>{category.name}</span>
+                            </div>
+                            <span className="text-gray-500 font-medium">
+                              {category.percentage}%
+                            </span>
                           </div>
-                          <span className="text-gray-500 font-medium">{category.percentage}%</span>
-                        </div>
-                      ))}
+                        ))}
                       {template.categories.length > 4 && (
                         <p className="text-xs text-gray-500">
-                          +{template.categories.length - 4} {t("templates.more")}
+                          +{template.categories.length - 4}{" "}
+                          {t("templates.more")}
                         </p>
                       )}
                     </div>

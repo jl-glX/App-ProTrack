@@ -12,11 +12,7 @@
       "buildResources": "build",
       "output": "dist-electron"
     },
-    "files": [
-      "dist/**/*",
-      "electron-main.js",
-      "package.json"
-    ],
+    "files": ["dist/**/*", "electron-main.js", "package.json"],
     "mac": {
       "category": "public.app-category.finance",
       "target": ["dmg", "zip"],

@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "./ui/dialog";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
@@ -73,9 +79,12 @@ export function AddTransactionDialog({
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <Label htmlFor="category">{t("budget.categories")}</Label>
-            <Select value={formData.categoryId} onValueChange={(value) =>
-              setFormData({ ...formData, categoryId: value })
-            }>
+            <Select
+              value={formData.categoryId}
+              onValueChange={(value) =>
+                setFormData({ ...formData, categoryId: value })
+              }
+            >
               <SelectTrigger id="category">
                 <SelectValue placeholder={t("forms.selectCategory")} />
               </SelectTrigger>
@@ -95,17 +104,23 @@ export function AddTransactionDialog({
               type="number"
               step="0.01"
               value={formData.amount}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFormData({ ...formData, amount: e.target.value })}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setFormData({ ...formData, amount: e.target.value })
+              }
               placeholder="0.00"
               required
             />
           </div>
           <div>
-            <Label htmlFor="description">{t("forms.transactionDescription")}</Label>
+            <Label htmlFor="description">
+              {t("forms.transactionDescription")}
+            </Label>
             <Input
               id="description"
               value={formData.description}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFormData({ ...formData, description: e.target.value })}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setFormData({ ...formData, description: e.target.value })
+              }
               placeholder={t("forms.optional")}
             />
           </div>
@@ -115,11 +130,17 @@ export function AddTransactionDialog({
               id="date"
               type="date"
               value={formData.date}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFormData({ ...formData, date: e.target.value })}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setFormData({ ...formData, date: e.target.value })
+              }
               required
             />
           </div>
-          <Button type="submit" className="w-full" disabled={loading || !formData.categoryId}>
+          <Button
+            type="submit"
+            className="w-full"
+            disabled={loading || !formData.categoryId}
+          >
             {loading ? t("forms.adding") : t("dialog.addTransaction")}
           </Button>
         </form>

@@ -15,7 +15,11 @@ export function DownloadApp() {
     else if (userAgent.indexOf("mac") !== -1) setPlatform("macos");
     else if (userAgent.indexOf("linux") !== -1) setPlatform("linux");
     else if (userAgent.indexOf("android") !== -1) setPlatform("android");
-    else if (userAgent.indexOf("iphone") !== -1 || userAgent.indexOf("ipad") !== -1) setPlatform("ios");
+    else if (
+      userAgent.indexOf("iphone") !== -1 ||
+      userAgent.indexOf("ipad") !== -1
+    )
+      setPlatform("ios");
 
     // Listen for PWA install prompt
     const handler = (e: any) => {
@@ -23,9 +27,9 @@ export function DownloadApp() {
       setDeferredPrompt(e);
       setShowInstallPrompt(true);
     };
-    
+
     window.addEventListener("beforeinstallprompt", handler);
-    
+
     return () => window.removeEventListener("beforeinstallprompt", handler);
   }, []);
 
@@ -45,16 +49,16 @@ export function DownloadApp() {
       icon: <Monitor className="w-6 h-6" />,
       options: [
         { name: "Installer (.exe)", url: "#", recommended: true },
-        { name: "Portable (.exe)", url: "#" }
-      ]
+        { name: "Portable (.exe)", url: "#" },
+      ],
     },
     macos: {
       title: "macOS",
       icon: <Monitor className="w-6 h-6" />,
       options: [
         { name: "DMG", url: "#", recommended: true },
-        { name: "ZIP", url: "#" }
-      ]
+        { name: "ZIP", url: "#" },
+      ],
     },
     linux: {
       title: "Linux",
@@ -63,8 +67,8 @@ export function DownloadApp() {
         { name: "AppImage", url: "#", recommended: true },
         { name: "DEB (Debian/Ubuntu)", url: "#" },
         { name: "RPM (Fedora/RHEL)", url: "#" },
-        { name: "Snap", url: "#" }
-      ]
+        { name: "Snap", url: "#" },
+      ],
     },
     android: {
       title: "Android",
@@ -72,22 +76,23 @@ export function DownloadApp() {
       options: [
         { name: "Google Play Store", url: "#", recommended: true },
         { name: "APK Download", url: "#" },
-        { name: "F-Droid", url: "#" }
-      ]
+        { name: "F-Droid", url: "#" },
+      ],
     },
     ios: {
       title: "iOS/iPadOS",
       icon: <Smartphone className="w-6 h-6" />,
       options: [
         { name: "App Store", url: "#", recommended: true },
-        { name: "Install as PWA", url: "#", isPWA: true }
-      ]
-    }
+        { name: "Install as PWA", url: "#", isPWA: true },
+      ],
+    },
   };
 
-  const currentPlatformDownloads = platform !== "unknown" && platform in downloads 
-    ? downloads[platform as keyof typeof downloads]
-    : null;
+  const currentPlatformDownloads =
+    platform !== "unknown" && platform in downloads
+      ? downloads[platform as keyof typeof downloads]
+      : null;
 
   return (
     <div className="space-y-6">
@@ -98,7 +103,9 @@ export function DownloadApp() {
               <Globe className="w-10 h-10 text-blue-600" />
               <div>
                 <h3 className="font-semibold text-lg">Install as App</h3>
-                <p className="text-sm text-gray-600">Install this app on your device for quick access</p>
+                <p className="text-sm text-gray-600">
+                  Install this app on your device for quick access
+                </p>
               </div>
             </div>
             <Button onClick={handleInstallPWA} className="gap-2">
@@ -113,23 +120,36 @@ export function DownloadApp() {
         <Card className="p-6">
           <div className="flex items-center gap-3 mb-4">
             {currentPlatformDownloads.icon}
-            <h3 className="text-xl font-bold">Download for {currentPlatformDownloads.title}</h3>
+            <h3 className="text-xl font-bold">
+              Download for {currentPlatformDownloads.title}
+            </h3>
           </div>
           <div className="space-y-3">
             {currentPlatformDownloads.options.map((option) => (
-              <div key={option.name} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+              <div
+                key={option.name}
+                className="flex items-center justify-between p-3 bg-gray-50 rounded-lg"
+              >
                 <div>
                   <p className="font-medium">{option.name}</p>
                   {option.recommended && (
-                    <span className="text-xs text-blue-600 font-semibold">Recommended</span>
+                    <span className="text-xs text-blue-600 font-semibold">
+                      Recommended
+                    </span>
                   )}
                 </div>
-                <Button 
-                  variant={option.recommended ? "default" : "outline"} 
+                <Button
+                  variant={option.recommended ? "default" : "outline"}
                   size="sm"
                   onClick={() => {
-                    if ("isPWA" in option && option.isPWA && platform === "ios") {
-                      alert("To install on iOS: Tap the Share button and select 'Add to Home Screen'");
+                    if (
+                      "isPWA" in option &&
+                      option.isPWA &&
+                      platform === "ios"
+                    ) {
+                      alert(
+                        "To install on iOS: Tap the Share button and select 'Add to Home Screen'",
+                      );
                     } else {
                       window.open(option.url, "_blank");
                     }
@@ -169,9 +189,12 @@ export function DownloadApp() {
       </div>
 
       <Card className="p-6 bg-gradient-to-r from-green-50 to-emerald-50 border-green-200">
-        <h3 className="font-semibold text-lg mb-2">Progressive Web App (PWA)</h3>
+        <h3 className="font-semibold text-lg mb-2">
+          Progressive Web App (PWA)
+        </h3>
         <p className="text-gray-600 mb-4">
-          Install this app directly from your browser on any device. No app store required!
+          Install this app directly from your browser on any device. No app
+          store required!
         </p>
         <ul className="space-y-2 text-sm text-gray-700">
           <li>✅ Works offline</li>

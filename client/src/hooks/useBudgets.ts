@@ -82,7 +82,9 @@ export function useBudgets() {
     }
   };
 
-  const createBudget = async (budget: Omit<Budget, "id" | "createdAt" | "updatedAt">) => {
+  const createBudget = async (
+    budget: Omit<Budget, "id" | "createdAt" | "updatedAt">,
+  ) => {
     try {
       const response = await fetch("/api/budgets", {
         method: "POST",
@@ -124,7 +126,15 @@ export function useBudgets() {
     }
   };
 
-  return { budgets, loading, error, fetchBudgets, createBudget, updateBudget, deleteBudget };
+  return {
+    budgets,
+    loading,
+    error,
+    fetchBudgets,
+    createBudget,
+    updateBudget,
+    deleteBudget,
+  };
 }
 
 export function useBudgetDetail(budgetId: string) {
@@ -154,7 +164,9 @@ export function useBudgetDetail(budgetId: string) {
     }
   };
 
-  const createCategory = async (category: Omit<Category, "id" | "createdAt" | "spent">) => {
+  const createCategory = async (
+    category: Omit<Category, "id" | "createdAt" | "spent">,
+  ) => {
     try {
       const response = await fetch("/api/categories", {
         method: "POST",
@@ -188,7 +200,9 @@ export function useBudgetDetail(budgetId: string) {
 
   const deleteCategory = async (id: string) => {
     try {
-      const response = await fetch(`/api/categories/${id}`, { method: "DELETE" });
+      const response = await fetch(`/api/categories/${id}`, {
+        method: "DELETE",
+      });
       if (!response.ok) throw new Error("Failed to delete category");
       setCategories(categories.filter((c) => c.id !== id));
       setTransactions(transactions.filter((t) => t.categoryId !== id));
@@ -197,7 +211,9 @@ export function useBudgetDetail(budgetId: string) {
     }
   };
 
-  const createTransaction = async (transaction: Omit<Transaction, "id" | "createdAt">) => {
+  const createTransaction = async (
+    transaction: Omit<Transaction, "id" | "createdAt">,
+  ) => {
     try {
       const response = await fetch("/api/transactions", {
         method: "POST",
@@ -216,7 +232,9 @@ export function useBudgetDetail(budgetId: string) {
 
   const deleteTransaction = async (id: string) => {
     try {
-      const response = await fetch(`/api/transactions/${id}`, { method: "DELETE" });
+      const response = await fetch(`/api/transactions/${id}`, {
+        method: "DELETE",
+      });
       if (!response.ok) throw new Error("Failed to delete transaction");
       setTransactions(transactions.filter((t) => t.id !== id));
       await fetchBudgetDetail();

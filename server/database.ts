@@ -100,7 +100,7 @@ export interface DatabaseSchema {
 
 export function initializeDatabase() {
   const dataDirectory = process.env.DATA_DIRECTORY ?? "/home/app/data";
-  
+
   if (!fs.existsSync(dataDirectory)) {
     fs.mkdirSync(dataDirectory, { recursive: true });
   }
@@ -122,7 +122,7 @@ export async function setupDatabase() {
   db = initializeDatabase();
 
   console.log("Creating database tables...");
-  
+
   try {
     await db.schema
       .createTable("budgets")
@@ -144,7 +144,7 @@ export async function setupDatabase() {
       .ifNotExists()
       .addColumn("id", "text", (col) => col.primaryKey())
       .addColumn("budgetId", "text", (col) =>
-        col.notNull().references("budgets.id").onDelete("cascade")
+        col.notNull().references("budgets.id").onDelete("cascade"),
       )
       .addColumn("name", "text", (col) => col.notNull())
       .addColumn("limit", "real", (col) => col.notNull())
@@ -159,10 +159,10 @@ export async function setupDatabase() {
       .ifNotExists()
       .addColumn("id", "text", (col) => col.primaryKey())
       .addColumn("categoryId", "text", (col) =>
-        col.notNull().references("categories.id").onDelete("cascade")
+        col.notNull().references("categories.id").onDelete("cascade"),
       )
       .addColumn("budgetId", "text", (col) =>
-        col.notNull().references("budgets.id").onDelete("cascade")
+        col.notNull().references("budgets.id").onDelete("cascade"),
       )
       .addColumn("amount", "real", (col) => col.notNull())
       .addColumn("description", "text")
