@@ -1,7 +1,7 @@
 import { useBudgets } from "../hooks/useBudgets";
 import { BudgetCard } from "../components/BudgetCard";
 import { LanguageSelector } from "../components/LanguageSelector";
-import { FeedbackForm } from "../components/FeedbackForm";
+import { FeedbackForms } from "../components/FeedbackForms";
 import { Button } from "../components/ui/button";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
@@ -71,7 +71,7 @@ export function Dashboard() {
               <Download className="w-4 h-4" />
               <span className="hidden sm:inline">{t('dashboard.download')}</span>
             </Button>
-            <FeedbackForm />
+            <FeedbackForms />
           </div>
         </div>
 
