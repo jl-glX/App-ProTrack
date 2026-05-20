@@ -1,14 +1,14 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useBudgetDetail } from "../hooks/useBudgets";
-import { CreateCategoryDialog } from "../Components/CreateCategoryDialog";
-import { AddTransactionDialog } from "../Components/AddTransactionDialog";
-import { CategoryProgress } from "../Components/CategoryProgress";
-import { CategoryBreakdownChart } from "../Components/CategoryBreakdownChart";
-import { SpendingTrendChart } from "../Components/SpendingTrendChart";
-import { CategoryPercentageChart } from "../Components/CategoryPercentageChart";
-import { BudgetAnalytics } from "../Components/BudgetAnalytics";
-import { Button } from "../Components/ui/button";
-import { Card } from "../Components/ui/card";
+import { CreateCategoryDialog } from "../components/CreateCategoryDialog";
+import { AddTransactionDialog } from "../components/AddTransactionDialog";
+import { CategoryProgress } from "../components/CategoryProgress";
+import { CategoryBreakdownChart } from "../components/CategoryBreakdownChart";
+import { SpendingTrendChart } from "../components/SpendingTrendChart";
+import { CategoryPercentageChart } from "../components/CategoryPercentageChart";
+import { BudgetAnalytics } from "../components/BudgetAnalytics";
+import { Button } from "../components/ui/button";
+import { Card } from "../components/ui/card";
 import { ArrowLeft, Trash2 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 

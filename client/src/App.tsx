@@ -5,7 +5,7 @@ import { CreateBudgetPage } from "./pages/CreateBudgetPage";
 import { DownloadsPage } from "./pages/DownloadsPage";
 import { LegalPage } from "./pages/LegalPage";
 import { TemplatesPage } from "./pages/TemplatesPage";
-import { CookieConsent } from "./Components/CookieConsent";
+import { CookieConsent } from "./components/CookieConsent";
 
 function App() {
   return (

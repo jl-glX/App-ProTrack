@@ -1,23 +1,23 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Button } from "../Components/ui/button";
-import { Input } from "../Components/ui/input";
-import { Label } from "../Components/ui/label";
-import { Card } from "../Components/ui/card";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
+import { Label } from "../components/ui/label";
+import { Card } from "../components/ui/card";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../Components/ui/select";
-import { CurrencySelector } from "../Components/CurrencySelector";
+} from "../components/ui/select";
+import { CurrencySelector } from "../components/CurrencySelector";
 import { useTemplates } from "../hooks/useTemplates";
 import { useTaxes } from "../hooks/useTaxes";
 import { useBudgets } from "../hooks/useBudgets";
-import { TemplateSelector } from "../Components/TemplateSelector";
-import { TaxSelector } from "../Components/TaxSelector";
-import { ProfessionalBudgetEditor } from "../Components/ProfessionalBudgetEditor";
+import { TemplateSelector } from "../components/TemplateSelector";
+import { TaxSelector } from "../components/TaxSelector";
+import { ProfessionalBudgetEditor } from "../components/ProfessionalBudgetEditor";
 import { TaxRate } from "../hooks/useBudgets";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslation } from "react-i18next";

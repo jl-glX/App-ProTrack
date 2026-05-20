@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTemplates } from "../hooks/useTemplates";
-import { Button } from "../Components/ui/button";
-import { Card } from "../Components/ui/card";
-import { TemplateEditor } from "../Components/TemplateEditor";
-import { TemplateWizard } from "../Components/TemplateWizard";
-import { TemplateAutomation } from "../Components/TemplateAutomation";
+import { Button } from "../components/ui/button";
+import { Card } from "../components/ui/card";
+import { TemplateEditor } from "../components/TemplateEditor";
+import { TemplateWizard } from "../components/TemplateWizard";
+import { TemplateAutomation } from "../components/TemplateAutomation";
 import { ArrowLeft, Plus, Edit, Trash2, Wand2, Zap, Copy } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
