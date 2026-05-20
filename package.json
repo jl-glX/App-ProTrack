@@ -5,13 +5,16 @@
   "type": "module",
   "main": "electron-main.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "electron": "electron .",
-    "start": "concurrently \"vite\" \"wait-on http://localhost:5173 && electron .\"",
-    "android": "npx cap open android",
-    "sync": "npx cap sync"
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview",
+  "typecheck": "tsc --noEmit",
+  "ci": "npm run typecheck && npm run build",
+  "electron": "electron .",
+  "start": "concurrently \"vite\" \"wait-on http://localhost:5173 && electron .\"",
+  "server": "tsx server/index.ts",
+  "android": "npx cap open android",
+  "sync": "npx cap sync"
   },
   "dependencies": {
     "@capacitor/android": "^7.0.0",
