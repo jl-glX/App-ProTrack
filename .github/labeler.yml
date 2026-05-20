@@ -1,0 +1,30 @@
+frontend:
+  - "client/**"
+
+backend:
+  - "server/**"
+
+android:
+  - "android/**"
+
+electron:
+  - "electron*"
+  - "electron.config.json"
+
+documentation:
+  - "*.md"
+
+github-actions:
+  - ".github/**"
+
+scripts:
+  - "scripts/**"
+
+config:
+  - "*.json"
+  - "*.config.js"
+  - "*.config.ts"
+
+dependencies:
+  - "package.json"
+  - "package-lock.json"
