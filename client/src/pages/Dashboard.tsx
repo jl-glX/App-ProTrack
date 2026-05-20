@@ -1,8 +1,8 @@
 import { useBudgets } from "../hooks/useBudgets";
-import { BudgetCard } from "../components/BudgetCard";
-import { LanguageSelector } from "../components/LanguageSelector";
-import { FeedbackForms } from "../components/FeedbackForms";
-import { Button } from "../components/ui/button";
+import { BudgetCard } from "../Components/BudgetCard";
+import { LanguageSelector } from "../Components/LanguageSelector";
+import { FeedbackForms } from "../Components/FeedbackForms";
+import { Button } from "../Components/ui/button";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
