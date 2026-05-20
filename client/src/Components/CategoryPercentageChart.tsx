@@ -57,7 +57,7 @@ export function CategoryPercentageChart({
           />
           <YAxis label={{ value: "%", angle: -90, position: "insideLeft" }} />
           <Tooltip
-            formatter={(value: number) => [`${value.toFixed(1)}%`, "Usage"]}
+            formatter={(value) => [`${Number(value ?? 0).toFixed(1)}%`, "Usage"]}
             contentStyle={{ backgroundColor: "#fff", border: "1px solid #ccc" }}
           />
           <Legend />

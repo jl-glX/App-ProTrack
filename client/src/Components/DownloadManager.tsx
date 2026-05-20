@@ -83,7 +83,7 @@ export function DownloadManager({
       }
 
       // Create blob and download
-      const blob = new Blob(chunks);
+      const blob = new Blob(chunks as BlobPart[]);
       const url = window.URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url;

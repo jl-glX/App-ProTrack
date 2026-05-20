@@ -67,7 +67,7 @@ export function SpendingTrendChart({ transactions }: SpendingTrendChartProps) {
           />
           <YAxis />
           <Tooltip
-            formatter={(value: number) => `$${value.toFixed(2)}`}
+            formatter={(value) => `$${Number(value ?? 0).toFixed(2)}`}
             contentStyle={{ backgroundColor: "#fff", border: "1px solid #ccc" }}
           />
           <Legend />

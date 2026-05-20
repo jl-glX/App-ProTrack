@@ -66,7 +66,7 @@ export function CategoryBreakdownChart({
             cx="50%"
             cy="50%"
             labelLine={false}
-            label={({ percent }) => `${(percent * 100).toFixed(0)}%`}
+            label={({ percent }) => `${((percent ?? 0) * 100).toFixed(0)}%`}
             outerRadius={100}
             fill="#8884d8"
             dataKey="value"
@@ -79,7 +79,7 @@ export function CategoryBreakdownChart({
             ))}
           </Pie>
           <Tooltip
-            formatter={(value: number) => `$${value.toFixed(2)}`}
+            formatter={(value) => `$${Number(value ?? 0).toFixed(2)}`}
             contentStyle={{ backgroundColor: "#fff", border: "1px solid #ccc" }}
           />
           <Legend />
