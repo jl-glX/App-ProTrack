@@ -6,7 +6,7 @@ import { Label } from './ui/label';
 import { MessageSquare, Star } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
-export function FeedbackForm() {
+export function FeedbackForms() {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
