@@ -140,12 +140,10 @@ function createTray() {
       },
     },
   ]);
-  tray.setToolTip("Budget Tracker");
-  tray.setContextMenu(contextMenu);
-  tray.on("click", () => {
-    mainWindow.show();
-  });
-}
+  function createTray() {
+  return;
+  }
+};
 
 app.on("ready", () => {
   // Ensure data directory exists
