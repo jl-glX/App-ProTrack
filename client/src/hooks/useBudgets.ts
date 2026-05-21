@@ -103,7 +103,7 @@ export function useBudgets() {
 
   const updateBudget = async (id: string, budget: Partial<Budget>) => {
     try {
-      const response = await fetch(`/api/budgets/${id}`, {
+      const response = await fetch(apiUrl(`/api/budgets/${id}`), {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(budget),
@@ -119,7 +119,7 @@ export function useBudgets() {
 
   const deleteBudget = async (id: string) => {
     try {
-      const response = await fetch(`/api/budgets/${id}`, { method: "DELETE" });
+      const response = await fetch(apiUrl(`/api/budgets/${id}`), { method: "DELETE" });
       if (!response.ok) throw new Error("Failed to delete budget");
       setBudgets(budgets.filter((b) => b.id !== id));
     } catch (err) {
@@ -138,13 +138,12 @@ export function useBudgets() {
   };
 }
 
-export async function useBudgetDetail(budgetId: string) {
+export function useBudgetDetail(budgetId: string) {
   const [budget, setBudget] = useState<Budget | null>(null);
   const [categories, setCategories] = useState<Category[]>([]);
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const response = await fetch(apiUrl("/api/budgets"));
 
   useEffect(() => {
     fetchBudgetDetail();
@@ -153,7 +152,7 @@ export async function useBudgetDetail(budgetId: string) {
   const fetchBudgetDetail = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`/api/budgets/${budgetId}`);
+      const response = await fetch(apiUrl(`/api/budgets/${budgetId}`));
       if (!response.ok) throw new Error("Failed to fetch budget");
       const data = await response.json();
       setBudget(data.budget);
@@ -170,7 +169,7 @@ export async function useBudgetDetail(budgetId: string) {
     category: Omit<Category, "id" | "createdAt" | "spent">,
   ) => {
     try {
-      const response = await fetch("/api/categories", {
+      const response = await fetch(apiUrl("/api/categories"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(category),
@@ -186,7 +185,7 @@ export async function useBudgetDetail(budgetId: string) {
 
   const updateCategory = async (id: string, category: Partial<Category>) => {
     try {
-      const response = await fetch(`/api/categories/${id}`, {
+      const response = await fetch(apiUrl(`/api/categories/${id}`), {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(category),
@@ -202,7 +201,7 @@ export async function useBudgetDetail(budgetId: string) {
 
   const deleteCategory = async (id: string) => {
     try {
-      const response = await fetch(`/api/categories/${id}`, {
+      const response = await fetch(apiUrl(`/api/categories/${id}`), {
         method: "DELETE",
       });
       if (!response.ok) throw new Error("Failed to delete category");
@@ -217,7 +216,7 @@ export async function useBudgetDetail(budgetId: string) {
     transaction: Omit<Transaction, "id" | "createdAt">,
   ) => {
     try {
-      const response = await fetch("/api/transactions", {
+      const response = await fetch(apiUrl("/api/transactions"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(transaction),
@@ -234,7 +233,7 @@ export async function useBudgetDetail(budgetId: string) {
 
   const deleteTransaction = async (id: string) => {
     try {
-      const response = await fetch(`/api/transactions/${id}`, {
+      const response = await fetch(apiUrl(`/api/transactions/${id}`), {
         method: "DELETE",
       });
       if (!response.ok) throw new Error("Failed to delete transaction");
