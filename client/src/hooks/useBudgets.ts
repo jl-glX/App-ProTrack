@@ -138,12 +138,13 @@ export function useBudgets() {
   };
 }
 
-export function useBudgetDetail(budgetId: string) {
+export async function useBudgetDetail(budgetId: string) {
   const [budget, setBudget] = useState<Budget | null>(null);
   const [categories, setCategories] = useState<Category[]>([]);
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const response = await fetch(apiUrl("/api/budgets"));
 
   useEffect(() => {
     fetchBudgetDetail();
