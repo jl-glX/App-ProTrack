@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import { pathToFileURL } from "url";
 import helmet from "helmet";
 import cors from "cors";
 import cookieParser from "cookie-parser";
@@ -66,7 +67,7 @@ export async function startServer(port: number | string) {
 }
 
 // Start the server directly if this is the main module
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
   console.log("Starting server...");
   startServer(process.env.PORT || 3001);
 }
