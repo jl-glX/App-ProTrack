@@ -103,7 +103,7 @@ function createWindow() {
           click: async () => {
             const { shell } = require("electron");
             await shell.openExternal(
-              "https://github.com/yourusername/budget-tracker",
+              "https://github.com/jl-glX/budget-tracker",
             );
           },
         },
