@@ -6,6 +6,8 @@ export const vitePort = 3000;
 
 export default defineConfig(({ mode }) => {
   return {
+    base: "./",
+
     plugins: [
       react(),
       // Custom plugin to handle source map requests

@@ -1,7 +1,7 @@
 // Preload script for Electron
 // This runs in the renderer process before web content loads
 
-import { contextBridge, ipcRenderer } from "electron";
+const { contextBridge, ipcRenderer } = require("electron");
 
 contextBridge.exposeInMainWorld("electronAPI", {
   platform: process.platform,
