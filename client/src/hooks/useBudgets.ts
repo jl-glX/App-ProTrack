@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { apiUrl } from "../lib/api";
 
 export interface Budget {
   id: string;
@@ -71,7 +72,7 @@ export function useBudgets() {
   const fetchBudgets = async () => {
     try {
       setLoading(true);
-      const response = await fetch("/api/budgets");
+      const response = await fetch(apiUrl("/api/budgets"));
       if (!response.ok) throw new Error("Failed to fetch budgets");
       const data = await response.json();
       setBudgets(data);
@@ -86,7 +87,7 @@ export function useBudgets() {
     budget: Omit<Budget, "id" | "createdAt" | "updatedAt">,
   ) => {
     try {
-      const response = await fetch("/api/budgets", {
+      const response = await fetch(apiUrl("/api/budgets"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(budget),
