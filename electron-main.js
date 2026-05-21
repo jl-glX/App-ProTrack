@@ -1,6 +1,10 @@
-const { app, BrowserWindow, Menu, Tray } = require("electron");
-const path = require("path");
-const fs = require("fs");
+import { app, BrowserWindow, Menu, Tray, shell } from "electron";
+import path from "node:path";
+import fs from "node:fs";
+import { fileURLToPath } from "node:url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 let mainWindow;
 let tray;
@@ -30,7 +34,7 @@ function createWindow() {
     mainWindow.loadURL("http://localhost:3000");
     mainWindow.webContents.openDevTools();
   } else {
-    mainWindow.loadFile(path.join(__dirname, "dist/index.html"));
+    mainWindow.loadFile(path.join(__dirname, "dist", "public", "index.html"));
   }
 
   mainWindow.once("ready-to-show", () => {
@@ -101,7 +105,6 @@ function createWindow() {
         {
           label: "Documentation",
           click: async () => {
-            const { shell } = require("electron");
             await shell.openExternal(
               "https://github.com/jl-glX/budget-tracker",
             );
@@ -122,7 +125,7 @@ function createWindow() {
 }
 
 function createTray() {
-  tray = new Tray(path.join(__dirname, "build/icon.png"));
+  //tray = new Tray(path.join(__dirname, "build/icon.png"));
   const contextMenu = Menu.buildFromTemplate([
     {
       label: "Show App",
