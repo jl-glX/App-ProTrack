@@ -23,7 +23,7 @@ function createWindow() {
       contextIsolation: true,
       preload: path.join(__dirname, "preload.js"),
     },
-    icon: path.join(__dirname, "build/icon.png"),
+    // icon: path.join(__dirname, "build/icon.png"),
     title: "Budget Tracker",
     backgroundColor: "#ffffff",
     show: false,
@@ -141,9 +141,11 @@ function createTray() {
     },
   ]);
   function createTray() {
-  return;
+    // Tray desactivado temporalmente hasta tener un icono válido.
+    // Evita errores con build/icon.png durante desarrollo.
+    return;
   }
-};
+}
 
 app.on("ready", () => {
   // Ensure data directory exists
