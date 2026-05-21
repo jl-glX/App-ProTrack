@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { Dashboard } from "./pages/Dashboard";
 import { BudgetDetail } from "./pages/BudgetDetail";
 import { CreateBudgetPage } from "./pages/CreateBudgetPage";
@@ -9,7 +9,7 @@ import { CookieConsent } from "./components/CookieConsent";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/create-budget" element={<CreateBudgetPage />} />
@@ -19,7 +19,7 @@ function App() {
         <Route path="/legal/:section" element={<LegalPage />} />
       </Routes>
       <CookieConsent />
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
