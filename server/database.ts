@@ -247,6 +247,21 @@ export async function setupDatabase() {
       // Silently ignore if index already exists
     }
 
+    await db.schema
+  .createTable("professional_budget_items")
+  .ifNotExists()
+  .addColumn("id", "text", (col) => col.primaryKey())
+  .addColumn("budgetId", "text", (col) =>
+    col.notNull().references("budgets.id").onDelete("cascade"),
+  )
+  .addColumn("description", "text", (col) => col.notNull())
+  .addColumn("quantity", "real", (col) => col.notNull())
+  .addColumn("unitPrice", "real", (col) => col.notNull())
+  .addColumn("total", "real", (col) => col.notNull())
+  .addColumn("itemOrder", "integer", (col) => col.notNull())
+  .addColumn("createdAt", "text", (col) => col.notNull())
+  .execute();
+  
     console.log("Database tables created successfully");
   } catch (error) {
     console.error("Error creating database tables:", error);
