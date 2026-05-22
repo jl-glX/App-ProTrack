@@ -135,6 +135,9 @@ export async function setupDatabase() {
       .addColumn("country", "text", (col) => col.defaultTo("US"))
       .addColumn("templateId", "text")
       .addColumn("taxPercentage", "real", (col) => col.defaultTo(0))
+      .addColumn("isProfessional", "integer", (col) => col.notNull().defaultTo(0))
+      .addColumn("subtotal", "real")
+      .addColumn("taxAmount", "real")
       .addColumn("createdAt", "text", (col) => col.notNull())
       .addColumn("updatedAt", "text", (col) => col.notNull())
       .execute();
