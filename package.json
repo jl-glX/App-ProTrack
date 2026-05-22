@@ -13,6 +13,7 @@
     "electron": "electron .",
     "start": "concurrently \"vite\" \"wait-on http://localhost:5173 && electron .\"",
     "server": "tsx server/index.ts",
+    "dev:full": "concurrently \"npm run server\" \"npm run dev\"",
     "android": "npx cap open android",
     "sync": "npx cap sync"
   },
